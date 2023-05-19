@@ -26,9 +26,9 @@ begin
     clock_proc : process
     begin
             s_clk <= '0';
-            wait for 100 ns;
+            wait for 10 ns;
             s_clk <= '1';
-            wait for 100 ns;
+            wait for 10 ns;
     end process;
 
     -- Stimulus process

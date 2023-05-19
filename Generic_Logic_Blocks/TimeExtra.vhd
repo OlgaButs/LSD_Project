@@ -3,21 +3,21 @@ use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all; 
 entity TimeExtra is 
  port(clk     :   in std_logic;
-		 cnt    :   out std_logic_vector(3 downto 0);
+		 cnt    :   out std_logic_vector(7 downto 0);
 		 data   :   in std_logic;
 		 enable :   in std_logic;
-		resetglb:  in std_logic;
+		resetglb:   in std_logic;
 		 reset  :   in std_logic); 
 end TimeExtra;
 
  
 architecture Structural of TimeExtra is 
- signal s_count : std_logic_vector(3 downto 0);
+ signal s_count : std_logic_vector(7 downto 0);
  signal s_reset, S_LD  : std_logic;
 begin  
 
  s_reset <= resetglb or (reset and not enable);
- Counter: entity work.Counter4(Behavioral)
+ Counter: entity work.Counter(Behavioral)
 			port map(clk => clk,
 						button => data, 
 						reset => s_reset,

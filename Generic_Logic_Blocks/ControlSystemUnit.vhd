@@ -21,13 +21,13 @@ USE ieee.std_logic_1164.all;
 
 ENTITY ControlSystemUnit IS
     PORT (
-        reset : IN STD_LOGIC := '0';
+        reset : IN STD_LOGIC;
         clock : IN STD_LOGIC;
-        start : IN STD_LOGIC := '0';
-        freezeEnd : IN STD_LOGIC := '0';
-        extraEn : IN STD_LOGIC := '0';
-        newPrg : IN STD_LOGIC := '0';
-        freeze : IN STD_LOGIC := '0';
+        start : IN STD_LOGIC;
+        freezeEnd : IN STD_LOGIC;
+        extraEn : IN STD_LOGIC;
+        newPrg : IN STD_LOGIC;
+        freeze : IN STD_LOGIC;
         en_1 : OUT STD_LOGIC;
         en_2 : OUT STD_LOGIC;
         en_3 : OUT STD_LOGIC;
@@ -42,6 +42,7 @@ ARCHITECTURE BEHAVIOR OF ControlSystemUnit IS
     SIGNAL fstate : type_fstate;
     SIGNAL reg_fstate : type_fstate;
 BEGIN
+
     PROCESS (clock,reg_fstate)
     BEGIN
         IF (clock='1' AND clock'event) THEN
@@ -90,7 +91,6 @@ BEGIN
                     ELSE
                         reg_fstate <= Menu;
                     END IF;
-
                     en_3 <= '0';
 
                     en_1 <= '1';
@@ -102,11 +102,10 @@ BEGIN
                     en_2 <= '0';
 
                     freezeStart <= '0';
+						  
                 WHEN Timer =>
                     IF (((start = '1') AND NOT((freeze = '1')))) THEN
                         reg_fstate <= TimeProcess;
-                    ELSIF (((freeze = '1') AND NOT((start = '1')))) THEN
-                        reg_fstate <= StartPrg;
                     ELSE
                         reg_fstate <= Timer;
                     END IF;
@@ -122,8 +121,10 @@ BEGIN
                     en_2 <= '0';
 
                     freezeStart <= '0';
+						  
                 WHEN TimeProcess =>
-                    IF ((freezeEnd = '1')) THEN
+					 
+                    IF (freezeEnd = '1') THEN
                         reg_fstate <= StartPrg;
                     ELSE
                         reg_fstate <= TimeProcess;
@@ -141,11 +142,11 @@ BEGIN
 
                     freezeStart <= '1';
                 WHEN StartPrg =>
-                    IF ((((start = '1') AND NOT((extraEn = '1'))) AND NOT((newPrg = '1')))) THEN
+                    IF (start = '1') THEN
                         reg_fstate <= Stop;
-                    ELSIF (((extraEn = '1') AND NOT((newPrg = '1')))) THEN
+                    ELSIF (extraEn = '1') THEN
                         reg_fstate <= Extra;
-                    ELSIF ((newPrg = '1')) THEN
+                    ELSIF (newPrg = '1') THEN
                         reg_fstate <= Init;
                     ELSE
                         reg_fstate <= StartPrg;
@@ -163,7 +164,7 @@ BEGIN
 
                     freezeStart <= '0';
                 WHEN Stop =>
-                    IF ((start = '1')) THEN
+                    IF (start = '1') THEN
                         reg_fstate <= StartPrg;
                     ELSE
                         reg_fstate <= Stop;
@@ -179,7 +180,7 @@ BEGIN
 
                     freezeStart <= '0';
                 WHEN Extra =>
-                    IF ((start = '1')) THEN
+                    IF (start = '1') THEN
                         reg_fstate <= StartPrg;
                     ELSE
                         reg_fstate <= Extra;
@@ -196,7 +197,7 @@ BEGIN
                     en_2 <= '1';
 
                     freezeStart <= '0';
-                WHEN OTHERS => 
+                WHEN OTHERS =>
                     en_1 <= 'X';
                     en_2 <= 'X';
                     en_3 <= 'X';

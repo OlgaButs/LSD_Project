@@ -159,6 +159,7 @@ begin
        timeVal <= "00000010";
        if (timeExp = '1') then
          s_nextState <= TExtra;
+				s_extra <= '1';
        else
          s_nextState <= TFim;
        end if;
@@ -166,7 +167,7 @@ begin
      when TExtra => 
 			 d_enable <= '0';
 			 s_valueExtra <= timeExtra;
-			 s_extra <= '1'; 
+			 s_extra <= '0'; 
 			 if (start_stop = '1') then
 				if (s_valueExtra /= "00000000") then
 				  s_nextState <= TCozer;

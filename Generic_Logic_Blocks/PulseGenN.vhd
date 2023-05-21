@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
 entity PulseGenN is
-	generic(N : positive := 4)
+	generic(N : positive := 4);
 	port (clkIn	:	in std_logic;
 			reset :  in std_logic;
 			pulse : out std_logic);

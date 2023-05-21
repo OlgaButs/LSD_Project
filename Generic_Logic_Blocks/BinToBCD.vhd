@@ -14,7 +14,7 @@ architecture Behavioral of BinToBCD is
     signal n : integer;
 begin
     n <= to_integer(unsigned(inBin));
-    process(inBin)
+    process(inBin,n)
     begin
         if n < 10 then
             outBCD <= inBin(3 downto 0);

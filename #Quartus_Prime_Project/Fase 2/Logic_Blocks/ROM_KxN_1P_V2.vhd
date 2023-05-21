@@ -4,17 +4,17 @@ use ieee.numeric_std.all;
 
 
 -- Interface:
-entity ROM_KxN_1P_V1 is
+entity ROM_KxN_1P_V2 is
 	generic( K : integer := 4;
 				N : integer := 8);
 				
 	port( address : in std_logic_vector((K-1) downto 0);
 			dataOut : out std_logic_vector((N-1) downto 0));
-end ROM_KxN_1P_V1;
+end ROM_KxN_1P_V2;
 
 
 -- Arquitetura:
-architecture Behaviour of ROM_KxN_1P_V1 is -- NOTA: A parametrização para futuros pães é aqui! (+na FSM)
+architecture Behaviour of ROM_KxN_1P_V2 is -- NOTA: A parametrização para futuros pães é aqui! (+na FSM)
 
 	constant WORDS : integer := (2**K);
 	

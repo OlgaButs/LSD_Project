@@ -115,6 +115,13 @@ https://fpgasoftware.intel.com/eula.
 		(text "rstGlobal" (rect 129 107 163 119)(font "Arial" ))
 		(line (pt 184 112)(pt 168 112)(line_width 1))
 	)
+	(port
+		(pt 184 128)
+		(output)
+		(text "stOut[3..0]" (rect 0 0 41 12)(font "Arial" ))
+		(text "stOut[3..0]" (rect 122 123 163 135)(font "Arial" ))
+		(line (pt 184 128)(pt 168 128)(line_width 3))
+	)
 	(drawing
 		(rectangle (rect 16 16 168 160)(line_width 1))
 	)

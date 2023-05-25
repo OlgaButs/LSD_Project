@@ -3,39 +3,111 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -3.961
-TNS   : -652.075
+Slack : -5.207
+TNS   : -786.212
+
+Type  : Slow 1200mV 85C Model Setup 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.210
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.210
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : 0.385
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -262.570
+TNS   : -260.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : -1.285
+TNS   : -1.285
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -3.543
-TNS   : -579.923
+Slack : -4.696
+TNS   : -703.130
+
+Type  : Slow 1200mV 0C Model Setup 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.297
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.338
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.398
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -262.570
+TNS   : -260.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : -1.285
+TNS   : -1.285
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -1.445
-TNS   : -217.546
+Slack : -2.036
+TNS   : -282.630
+
+Type  : Fast 1200mV 0C Model Setup 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.624
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.626
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.174
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.206
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.208
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -218.283
+TNS   : -215.356
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : -1.000
+TNS   : -1.000
 
 ------------------------------------------------------------

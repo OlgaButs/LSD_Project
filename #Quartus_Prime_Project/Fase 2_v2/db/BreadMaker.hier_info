@@ -7,22 +7,20 @@ HEX0[4] <= Bin7SegDecoder:inst30.decOut_n[4]
 HEX0[5] <= Bin7SegDecoder:inst30.decOut_n[5]
 HEX0[6] <= Bin7SegDecoder:inst30.decOut_n[6]
 CLOCK_50 => Debouncer:inst1.refClk
-CLOCK_50 => ControlSystemUnit:inst.clock
+CLOCK_50 => ControlSystemUnit_v2:inst25.clock
 CLOCK_50 => Debouncer:inst3.refClk
 CLOCK_50 => TimerN:inst5.clk
 CLOCK_50 => PulseGenN:inst11.clkIn
 CLOCK_50 => Debouncer:inst13.refClk
 CLOCK_50 => BreadBakerFSM:iaaanst1.clk
 CLOCK_50 => TimerAuxFSM:inst9.clk
-CLOCK_50 => FlipFlopD:inst2.clk
 CLOCK_50 => TimeExtra:inst4.clk
 CLOCK_50 => Debouncer:inst12.refClk
 KEY[0] => Debouncer:inst3.dirtyIn
 KEY[1] => Debouncer:inst1.dirtyIn
 KEY[2] => Debouncer:inst13.dirtyIn
 KEY[3] => Debouncer:inst12.dirtyIn
-SW[0] => FlipFlopD:inst2.dataIn[0]
-SW[1] => FlipFlopD:inst2.dataIn[1]
+SW[0] => inst.IN0
 HEX1[0] <= Bin7SegDecoder:inst31.decOut_n[0]
 HEX1[1] <= Bin7SegDecoder:inst31.decOut_n[1]
 HEX1[2] <= Bin7SegDecoder:inst31.decOut_n[2]
@@ -75,7 +73,15 @@ HEX7[6] <= Bin7SegDecoder:inst15.decOut_n[6]
 LEDG[0] <= BreadBakerFSM:iaaanst1.stOut[0]
 LEDG[1] <= BreadBakerFSM:iaaanst1.stOut[1]
 LEDG[2] <= BreadBakerFSM:iaaanst1.stOut[2]
+LEDG[3] <= ControlSystemUnit_v2:inst25.stOut[0]
+LEDG[4] <= ControlSystemUnit_v2:inst25.stOut[1]
+LEDG[5] <= ControlSystemUnit_v2:inst25.stOut[2]
+LEDG[6] <= ControlSystemUnit_v2:inst25.stOut[3]
 LEDR[0] <= BreadBakerFSM:iaaanst1.ledRed
+LEDR[1] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= Debugger_InputsAt50MHZ:inst36.output
+LEDR[3] <= Debugger_InputsAt50MHZ:inst37.output
+LEDR[4] <= PulseGenN:inst11.pulse
 
 
 |BreadMaker|Bin7SegDecoder:inst30
@@ -614,14 +620,7 @@ reset => s_currentState.OUTPUTSELECT
 reset => s_stateChanged.OUTPUTSELECT
 clk => s_stateChanged.CLK
 clk => s_currentState~1.DATAIN
-p1_p2[0] => Mux0.IN5
-p1_p2[0] => Mux1.IN5
-p1_p2[0] => Mux2.IN5
-p1_p2[0] => Mux3.IN5
-p1_p2[1] => Mux0.IN4
-p1_p2[1] => Mux1.IN4
-p1_p2[1] => Mux2.IN4
-p1_p2[1] => Mux3.IN4
+p1_p2 => addr[2].DATAIN
 start_stop => timeEnable1.DATAA
 start_stop => s_nextState.OUTPUTSELECT
 start_stop => s_nextState.OUTPUTSELECT
@@ -629,7 +628,6 @@ start_stop => Selector9.IN3
 start_stop => Selector8.IN1
 start_stop => Selector13.IN1
 start_stop => s_mensagens.DATAA
-start_stop => Selector15.IN1
 timeExtra[0] => s_valueExtra[0].DATAB
 timeExtra[1] => s_valueExtra[1].DATAB
 timeExtra[2] => s_valueExtra[2].DATAB
@@ -647,9 +645,9 @@ timeVal[4] <= Selector3.DB_MAX_OUTPUT_PORT_TYPE
 timeVal[5] <= Selector2.DB_MAX_OUTPUT_PORT_TYPE
 timeVal[6] <= Selector1.DB_MAX_OUTPUT_PORT_TYPE
 timeVal[7] <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
-stOut[0] <= stOut.DB_MAX_OUTPUT_PORT_TYPE
-stOut[1] <= stOut.DB_MAX_OUTPUT_PORT_TYPE
-stOut[2] <= <GND>
+stOut[0] <= WideOr11.DB_MAX_OUTPUT_PORT_TYPE
+stOut[1] <= WideOr10.DB_MAX_OUTPUT_PORT_TYPE
+stOut[2] <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
 timeExp => timeEnable1.OUTPUTSELECT
 timeExp => s_mensagens.OUTPUTSELECT
 timeExp => Selector10.IN3
@@ -661,12 +659,13 @@ timeExp => Selector9.IN1
 timeExp => Selector10.IN1
 timeExp => Selector11.IN1
 timeExp => Selector12.IN1
+timeExp => Selector15.IN1
 ledRed <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
 newPrg <= newPrg.DB_MAX_OUTPUT_PORT_TYPE
 extra <= s_extra.DB_MAX_OUTPUT_PORT_TYPE
 addr[0] <= addr.DB_MAX_OUTPUT_PORT_TYPE
 addr[1] <= addr.DB_MAX_OUTPUT_PORT_TYPE
-addr[2] <= addr.DB_MAX_OUTPUT_PORT_TYPE
+addr[2] <= p1_p2.DB_MAX_OUTPUT_PORT_TYPE
 addr[3] <= <GND>
 DataTime[0] => timeVal.DATAA
 DataTime[0] => Selector7.IN4
@@ -690,41 +689,58 @@ d_enable <= timeVal.DB_MAX_OUTPUT_PORT_TYPE
 mensagens <= Selector15.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|BreadMaker|ControlSystemUnit:inst
-reset => reg_fstate.Init.OUTPUTSELECT
-reset => reg_fstate.Menu.OUTPUTSELECT
-reset => reg_fstate.Timer.OUTPUTSELECT
-reset => reg_fstate.TimeProcess.OUTPUTSELECT
-reset => reg_fstate.StartPrg.OUTPUTSELECT
-reset => reg_fstate.Stop.OUTPUTSELECT
-reset => reg_fstate.Extra.OUTPUTSELECT
-reset => en_1.OUTPUTSELECT
-reset => en_2.OUTPUTSELECT
-reset => en_3.OUTPUTSELECT
-reset => start_stop.OUTPUTSELECT
-reset => freezeStart.OUTPUTSELECT
-reset => rstGlobal.OUTPUTSELECT
-clock => fstate~1.DATAIN
-start => reg_fstate.DATAA
+|BreadMaker|ControlSystemUnit_v2:inst25
+reset => pState.OUTPUTSELECT
+reset => pState.OUTPUTSELECT
+reset => pState.OUTPUTSELECT
+reset => pState.OUTPUTSELECT
+reset => pState.OUTPUTSELECT
+reset => pState.OUTPUTSELECT
+reset => pState.OUTPUTSELECT
+clock => pState~1.DATAIN
+start => fState.OUTPUTSELECT
+start => fState.OUTPUTSELECT
+start => fState.OUTPUTSELECT
+start => fState.OUTPUTSELECT
+start => fState.OUTPUTSELECT
+start => fState.OUTPUTSELECT
+start => fState.OUTPUTSELECT
 start => process_1.IN0
-start => reg_fstate.OUTPUTSELECT
-start => reg_fstate.OUTPUTSELECT
-start => reg_fstate.OUTPUTSELECT
-start => Selector3.IN5
-start => Selector4.IN3
-start => reg_fstate.DATAA
-start => Selector4.IN1
-start => Selector5.IN1
-freezeEnd => Selector3.IN6
-freezeEnd => Selector2.IN2
-extraEn => reg_fstate.OUTPUTSELECT
-extraEn => reg_fstate.OUTPUTSELECT
-extraEn => reg_fstate.DATAA
-newPrg => reg_fstate.DATAA
-newPrg => reg_fstate.DATAA
-freeze => reg_fstate.OUTPUTSELECT
-freeze => reg_fstate.OUTPUTSELECT
-freeze => Selector1.IN3
+start => fState.OUTPUTSELECT
+start => fState.OUTPUTSELECT
+start => fState.OUTPUTSELECT
+start => fState.OUTPUTSELECT
+start => fState.OUTPUTSELECT
+start => fState.OUTPUTSELECT
+start => fState.OUTPUTSELECT
+freezeEnd => fState.OUTPUTSELECT
+freezeEnd => fState.OUTPUTSELECT
+freezeEnd => fState.OUTPUTSELECT
+freezeEnd => fState.OUTPUTSELECT
+freezeEnd => fState.OUTPUTSELECT
+freezeEnd => fState.OUTPUTSELECT
+freezeEnd => fState.OUTPUTSELECT
+extraEn => fState.OUTPUTSELECT
+extraEn => fState.OUTPUTSELECT
+extraEn => fState.OUTPUTSELECT
+extraEn => fState.OUTPUTSELECT
+extraEn => fState.OUTPUTSELECT
+extraEn => fState.OUTPUTSELECT
+extraEn => fState.OUTPUTSELECT
+newPrg => fState.OUTPUTSELECT
+newPrg => fState.OUTPUTSELECT
+newPrg => fState.OUTPUTSELECT
+newPrg => fState.OUTPUTSELECT
+newPrg => fState.OUTPUTSELECT
+newPrg => fState.OUTPUTSELECT
+newPrg => fState.OUTPUTSELECT
+freeze => fState.OUTPUTSELECT
+freeze => fState.OUTPUTSELECT
+freeze => fState.OUTPUTSELECT
+freeze => fState.OUTPUTSELECT
+freeze => fState.OUTPUTSELECT
+freeze => fState.OUTPUTSELECT
+freeze => fState.OUTPUTSELECT
 freeze => process_1.IN1
 en_1 <= en_1.DB_MAX_OUTPUT_PORT_TYPE
 en_2 <= en_2.DB_MAX_OUTPUT_PORT_TYPE
@@ -732,6 +748,10 @@ en_3 <= en_3.DB_MAX_OUTPUT_PORT_TYPE
 start_stop <= start_stop.DB_MAX_OUTPUT_PORT_TYPE
 freezeStart <= freezeStart.DB_MAX_OUTPUT_PORT_TYPE
 rstGlobal <= rstGlobal.DB_MAX_OUTPUT_PORT_TYPE
+stOut[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+stOut[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+stOut[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+stOut[3] <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |BreadMaker|Debouncer:inst1
@@ -1124,19 +1144,6 @@ dataOut[4] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 dataOut[5] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 dataOut[6] <= <GND>
 dataOut[7] <= <GND>
-
-
-|BreadMaker|FlipFlopD:inst2
-clk => dataOut[0]~reg0.CLK
-clk => dataOut[1]~reg0.CLK
-reset => dataOut.OUTPUTSELECT
-reset => dataOut.OUTPUTSELECT
-enable => dataOut.OUTPUTSELECT
-enable => dataOut.OUTPUTSELECT
-dataIn[0] => dataOut.DATAB
-dataIn[1] => dataOut.DATAB
-dataOut[0] <= dataOut[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dataOut[1] <= dataOut[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |BreadMaker|TimeExtra:inst4
@@ -3102,5 +3109,15 @@ enable => decOut_n.OUTPUTSELECT
 enable => decOut_n.OUTPUTSELECT
 enable => decOut_n.OUTPUTSELECT
 enable => decOut_n.OUTPUTSELECT
+
+
+|BreadMaker|Debugger_InputsAt50MHZ:inst36
+input => startStop.CLK
+output <= startStop.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BreadMaker|Debugger_InputsAt50MHZ:inst37
+input => startStop.CLK
+output <= startStop.DB_MAX_OUTPUT_PORT_TYPE
 
 

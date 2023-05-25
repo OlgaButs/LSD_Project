@@ -6,7 +6,7 @@ entity BreadBakerFSM is
   port(
     reset      : in  std_logic;
     clk        : in  std_logic;
-    p1_p2      : in  std_logic_vector(1 downto 0);
+    p1_p2      : in  std_logic;--_vector(1 downto 0);
     start_stop : in  std_logic;
     timeExtra  : in  std_logic_vector(7 downto 0);
     newTime    : out std_logic;
@@ -60,7 +60,7 @@ begin
  begin
  -- signal aprovado <= '1';
    case p1_p2 is
-		when "01" =>
+		when '1' =>
        add_ammassar <= "0101";
        add_TotalTime <= "0100";
        add_levedar <= "0110";
@@ -82,7 +82,7 @@ begin
  s_time <= DataTime; 
  
  
- comb_proc : process(s_currentState, start_stop, timeExp,s_extra, s_time,s_valueExtra,timeExtra)
+ comb_proc : process(s_currentState, start_stop, timeExp,s_extra, s_time, s_valueExtra, timeExtra)
  begin
 	s_valueExtra <= "00000000";
    s_mensagens <= '0';
@@ -179,8 +179,8 @@ begin
 			 else
 				s_nextState <= TExtra;
 				s_mensagens <= '0';
-       end if;
-		 
+			end if;
+
 		 when others => 
 				 d_enable <= '1';
 				 timeVal <= (others => '0');
@@ -189,6 +189,7 @@ begin
 				 ledRed <= '0';
 				 s_mensagens <= '0';
 				 report "Reach undefined state";
+
  end case;
  end process comb_proc;
 
@@ -196,10 +197,12 @@ begin
  extra <= s_extra;
 
  with s_currentState select
-   stOut <= "001" when TAmmassar,
+   stOut <= "000" when TInit,
+				"001" when TAmmassar,
             "010" when TLevedar,
             "011" when TCozer,
-            "000" when others;
-
+				"100" when TFim,
+				"101" when TExtra,
+            "111" when others;
 				
 end Behavioral;

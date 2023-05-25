@@ -33,107 +33,179 @@ ENTITY ControlSystemUnit IS
         en_3 : OUT STD_LOGIC;
         start_stop : OUT STD_LOGIC;
         freezeStart : OUT STD_LOGIC;
-        rstGlobal : OUT STD_LOGIC;
-		  stOut : out std_logic_vector(3 downto 0)
+        rstGlobal : OUT STD_LOGIC
     );
 END ControlSystemUnit;
 
 ARCHITECTURE BEHAVIOR OF ControlSystemUnit IS
-    TYPE type_fState IS (Init,Menu,Timer,TimeProcess,StartPrg,Stop,Extra);
-    SIGNAL fState : type_fState;
-    SIGNAL pState : type_fState;
+    TYPE type_fstate IS (Init,Menu,Timer,TimeProcess,StartPrg,Stop,Extra);
+    SIGNAL fstate : type_fstate;
+    SIGNAL reg_fstate : type_fstate;
 BEGIN
 
-    PROCESS (clock)
+    PROCESS (clock,reg_fstate)
     BEGIN
         IF (clock='1' AND clock'event) THEN
-				IF (reset='1') THEN
-					pState <= Init;
-				ELSE
-					pState <= fState;
-				END IF;
+            fstate <= reg_fstate;
         END IF;
     END PROCESS;
 
-    PROCESS (pState, start,freezeEnd,extraEn,newPrg,freeze)
+    PROCESS (fstate,reset,start,freezeEnd,extraEn,newPrg,freeze)
     BEGIN
+        IF (reset='1') THEN
+            reg_fstate <= Init;
             en_1 <= '0';
             en_2 <= '0';
             en_3 <= '0';
             start_stop <= '0';
             freezeStart <= '0';
             rstGlobal <= '0';
-				fState <= pState;
+        ELSE
+            en_1 <= '0';
+            en_2 <= '0';
+            en_3 <= '0';
+            start_stop <= '0';
+            freezeStart <= '0';
+            rstGlobal <= '0';
 				
-            CASE pState IS
-				
+            CASE fstate IS
                 WHEN Init =>
-                    fState <= Menu;
+                    reg_fstate <= Menu;
+
+                    en_3 <= '0';
+
+                    en_1 <= '0';
+
                     rstGlobal <= '1';
-						  
+
+                    start_stop <= '0';
+
+                    en_2 <= '0';
+
+                    freezeStart <= '0';
                 WHEN Menu =>
                     IF ((freeze = '1')) THEN
-                        fState <= Timer;
+                        reg_fstate <= Timer;
                     ELSIF (start = '1') THEN
-                        fState <= StartPrg;
+                        reg_fstate <= StartPrg;
+                    ELSE
+                        reg_fstate <= Menu;
                     END IF;
+                    en_3 <= '0';
+
                     en_1 <= '1';
+
+                    rstGlobal <= '0';
+
+                    start_stop <= '0';
+
+                    en_2 <= '0';
+
+                    freezeStart <= '0';
 						  
                 WHEN Timer =>
                     IF (((start = '1') AND NOT((freeze = '1')))) THEN
-                        fState <= TimeProcess;
+                        reg_fstate <= TimeProcess;
                     ELSE
-                        fState <= Timer;
+                        reg_fstate <= Timer;
                     END IF;
 
                     en_3 <= '1';
+
                     en_1 <= '1';
+
+                    rstGlobal <= '0';
+
+                    start_stop <= '0';
+
+                    en_2 <= '0';
+
+                    freezeStart <= '0';
 						  
                 WHEN TimeProcess =>
 					 
                     IF (freezeEnd = '1') THEN
-                        fState <= StartPrg;
+                        reg_fstate <= StartPrg;
+                    ELSE
+                        reg_fstate <= TimeProcess;
                     END IF;
 
                     en_3 <= '1';
+
+                    en_1 <= '0';
+
+                    rstGlobal <= '0';
+
+                    start_stop <= '0';
+
+                    en_2 <= '0';
+
                     freezeStart <= '1';
-						  
                 WHEN StartPrg =>
                     IF (start = '1') THEN
-                        fState <= Stop;
+                        reg_fstate <= Stop;
                     ELSIF (extraEn = '1') THEN
-                        fState <= Extra;
+                        reg_fstate <= Extra;
                     ELSIF (newPrg = '1') THEN
-                        fState <= Init;
+                        reg_fstate <= Init;
+                    ELSE
+                        reg_fstate <= StartPrg;
                     END IF;
+
+                    en_3 <= '0';
+
+                    en_1 <= '0';
+
+                    rstGlobal <= '0';
 
                     start_stop <= '1';
 
+                    en_2 <= '0';
+
+                    freezeStart <= '0';
                 WHEN Stop =>
                     IF (start = '1') THEN
-                        fState <= StartPrg;
+                        reg_fstate <= StartPrg;
+                    ELSE
+                        reg_fstate <= Stop;
                     END IF;
 
+                    en_3 <= '0';
+
+                    en_1 <= '0';
+
+                    rstGlobal <= '0';
+
+                    en_2 <= '0';
+
+                    freezeStart <= '0';
                 WHEN Extra =>
                     IF (start = '1') THEN
-                        fState <= StartPrg;
+                        reg_fstate <= StartPrg;
+                    ELSE
+                        reg_fstate <= Extra;
                     END IF;
+
+                    en_3 <= '0';
+
+                    en_1 <= '0';
+
+                    rstGlobal <= '0';
+
+                    start_stop <= '0';
+
                     en_2 <= '1';
 
+                    freezeStart <= '0';
                 WHEN OTHERS =>
-                    fState <= Init;
+                    en_1 <= 'X';
+                    en_2 <= 'X';
+                    en_3 <= 'X';
+                    start_stop <= 'X';
+                    freezeStart <= 'X';
+                    rstGlobal <= 'X';
                     report "Reach undefined state";
             END CASE;
+        END IF;
     END PROCESS;
-	 
-	 
- with pState select
-   stOut <= "0001" when Init,
-            "0010" when Menu,
-            "0011" when Timer,
-				"0100" when TimeProcess,
-				"0101" when StartPrg,
-				"0110" when Stop,
-				"0111" when Extra,
-            "1000" when others;
 END BEHAVIOR;

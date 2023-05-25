@@ -162,6 +162,7 @@ begin
 				s_extra <= '1';
        else
          s_nextState <= TFim;
+			s_mensagens <= '1';
        end if;
 
      when TExtra => 
@@ -177,7 +178,7 @@ begin
 				end if;
 			 else
 				s_nextState <= TExtra;
-				s_mensagens <= '1';
+				s_mensagens <= '0';
        end if;
 		 
 		 when others => 
@@ -186,7 +187,7 @@ begin
 				 s_extra <= '0';
 				 newPrg <= '0';
 				 ledRed <= '0';
-				 s_mensagens <= '1';
+				 s_mensagens <= '0';
 				 report "Reach undefined state";
  end case;
  end process comb_proc;

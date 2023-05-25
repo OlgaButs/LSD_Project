@@ -23,7 +23,7 @@ begin
 						reset => s_reset,
 						enable => enable, 
 						load => S_LD,
-						dataIn => "0000",
+						dataIn => "00000000",
 						count => s_count);
 						
  S_LD <= '1' when (s_count(2) ='1' and s_count(0)='1') else '0';

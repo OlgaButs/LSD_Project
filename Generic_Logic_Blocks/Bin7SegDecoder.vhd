@@ -12,22 +12,23 @@ end Bin7SegDecoder;
 architecture Behavioral of Bin7SegDecoder is
 
 begin
-		decOut_n <= "1111111" when enable='0' else
-						"1111001" when binInput="0001" else --1
-						"0100100" when binInput="0010" else --2
-						"0110000" when binInput="0011" else --3
-						"0011001" when binInput="0100" else --4
-						"0010010" when binInput="0101" else --5
-						"0000010" when binInput="0110" else --6
-						"1111000" when binInput="0111" else --7
-						"0000000" when binInput="1000" else --8
-						"0010000" when binInput="1001" else --9
-						"0001000" when binInput="1010" else --A
-						"0000011" when binInput="1011" else --B
-						"1000110" when binInput="1100" else --C
-						"0100001" when binInput="1101" else --D
-						"0000110" when binInput="1110" else --E
-						"0001110" when binInput="1111" else --F
-						"1000000"; --0
+			
+			decOut_n <= "1111111" when enable = '0' else    
+							"1111001" when binInput = "0001" else -- 1
+							"0100100" when binInput = "0010" else -- 2
+							"0110000" when binInput = "0011" else -- 3
+							"0011001" when binInput = "0100" else -- 4
+							"0010010" when binInput = "0101" else -- 5/S
+							"0000010" when binInput = "0110" else -- 6
+							"1111000" when binInput = "0111" else -- 7
+							"0000000" when binInput = "1000" else -- 8
+							"0010000" when binInput = "1001" else -- 9
+							"0111111" when binInput = "1010" else -- ?????
+							"0000111" when binInput = "1011" else -- t
+							"0100011" when binInput = "1100" else -- o
+							"0001100" when binInput = "1101" else -- P
+							"0101011" when binInput = "1110" else -- n
+							"0111111" when binInput = "1111" else -- -
+							"1000000"; -- 0/O
 		
 end Behavioral;

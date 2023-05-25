@@ -8,6 +8,7 @@ architecture Behavioral of TimerN_TB is
 
 	-- Signals
 	signal s_clk, s_reset, s_enable, s_start, s_timerOut : std_logic;
+	signal s_cnt : std_logic_vector(7 downto 0);
 
 begin
 	-- Instanciação do TimerN
@@ -17,7 +18,8 @@ begin
 				reset    => s_reset,
 				enable   => s_enable,
 				start    => s_start,
-				timerOut => s_timerOut);
+				timerOut => s_timerOut,
+				cnt 		=> s_cnt);
 		
 	-- Processo de clock
 	clock_proc: process

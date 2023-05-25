@@ -21,13 +21,13 @@ entity BreadBakerFSM is
 	 timeEnable1: out std_logic;
 	 InitLoad   : out std_logic;
     d_enable   : out std_logic; 
-    mensagens  : out std_logic_vector(2 downto 0)
+    mensagens  : out std_logic
   );
 end BreadBakerFSM;
 
 architecture Behavioral of BreadBakerFSM is
   signal add_ammassar, add_TotalTime, add_levedar, add_cozer : std_logic_vector(3 downto 0);
-  signal s_mensagens : std_logic_vector(2 downto 0) := "000";
+  signal s_mensagens : std_logic := '0';
   signal s_extra : std_logic;
   signal s_time, s_valueExtra : std_logic_vector(7 downto 0); 
 
@@ -85,7 +85,7 @@ begin
  comb_proc : process(s_currentState, start_stop, timeExp,s_extra, s_time,s_valueExtra,timeExtra)
  begin
 	s_valueExtra <= "00000000";
-   s_mensagens <= "000";
+   s_mensagens <= '0';
    timeVal <= "00000000";
    newPrg  <= '0';
    s_extra <= '0';
@@ -114,7 +114,7 @@ begin
          s_nextState <= TLevedar;
        elsif start_stop = '0' then
          timeEnable1 <= '0';
-         s_mensagens <= "001";
+         s_mensagens <= '1';
 			s_nextState <= TAmmassar;
        else
          s_nextState <= TAmmassar;
@@ -128,7 +128,7 @@ begin
          s_nextState <= TCozer;
        elsif start_stop = '0' then
          timeEnable1 <= '0';
-         s_mensagens <= "010";
+         s_mensagens <= '1';
 			s_nextState <= TLevedar;
        else
          s_nextState <= TLevedar;
@@ -147,7 +147,7 @@ begin
 				s_nextState <= TFim;
 			elsif (start_stop = '0') then
 				timeEnable1 <= '0';
-				s_mensagens <= "011";
+				s_mensagens <= '1';
 				s_nextState <= TCozer;
 			else
 				s_nextState <= TCozer;
@@ -177,6 +177,7 @@ begin
 				end if;
 			 else
 				s_nextState <= TExtra;
+				s_mensagens <= '1';
        end if;
 		 
 		 when others => 
@@ -185,6 +186,7 @@ begin
 				 s_extra <= '0';
 				 newPrg <= '0';
 				 ledRed <= '0';
+				 s_mensagens <= '1';
 				 report "Reach undefined state";
  end case;
  end process comb_proc;

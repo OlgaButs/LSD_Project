@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BreadMaker
-Fri May 26 15:30:29 2023
+Fri May 26 15:41:09 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,28 +10,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |BreadMaker|ControlSystemUnit_v2:inst25|pState
-  9. State Machine - |BreadMaker|BreadBakerFSM:iaaanst1|s_currentState
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: ROM_KxN_1P_V2:inst28
- 14. Parameter Settings for User Entity Instance: Debouncer:inst1
- 15. Parameter Settings for User Entity Instance: Debouncer:inst3
- 16. Parameter Settings for User Entity Instance: TimerN:inst5
- 17. Parameter Settings for User Entity Instance: PulseGenN:inst11
- 18. Parameter Settings for User Entity Instance: Debouncer:inst13
- 19. Parameter Settings for User Entity Instance: TimerAuxFSM:inst9
- 20. Parameter Settings for User Entity Instance: ROM_KxN_1P_V1:inst27
- 21. Parameter Settings for User Entity Instance: Debouncer:inst12
- 22. Parameter Settings for User Entity Instance: Mux2_1:inst18
- 23. Port Connectivity Checks: "TimeExtra:inst4|Counter:Counter"
- 24. Post-Synthesis Netlist Statistics for Top Partition
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -58,20 +37,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 26 15:30:29 2023       ;
+; Analysis & Synthesis Status        ; Failed - Fri May 26 15:41:09 2023           ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; BreadMaker                                  ;
 ; Top-level Entity Name              ; BreadMaker                                  ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 578                                         ;
-;     Total combinational functions  ; 574                                         ;
-;     Dedicated logic registers      ; 204                                         ;
-; Total registers                    ; 204                                         ;
-; Total pins                         ; 75                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -170,343 +149,11 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                               ;
-+-----------------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path        ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                                                              ; Library ;
-+-----------------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; Logic_Blocks/Debugger_InputsAt50MHZ.vhd ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Debugger_InputsAt50MHZ.vhd ;         ;
-; Logic_Blocks/ControlSystemUnit_v2.vhd   ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/ControlSystemUnit_v2.vhd   ;         ;
-; Logic_Blocks/Mux3_1.vhd                 ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Mux3_1.vhd                 ;         ;
-; Logic_Blocks/ROM_KxN_1P_V2.vhd          ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/ROM_KxN_1P_V2.vhd          ;         ;
-; Logic_Blocks/Mux2_1.vhd                 ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Mux2_1.vhd                 ;         ;
-; Logic_Blocks/BinToBCD.vhd               ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/BinToBCD.vhd               ;         ;
-; Logic_Blocks/Bin7SegDecoder.vhd         ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Bin7SegDecoder.vhd         ;         ;
-; Logic_Blocks/TimerN.vhd                 ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/TimerN.vhd                 ;         ;
-; Logic_Blocks/TimeExtra.vhd              ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/TimeExtra.vhd              ;         ;
-; Logic_Blocks/Counter.vhd                ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Counter.vhd                ;         ;
-; Logic_Blocks/PulseGenN.vhd              ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/PulseGenN.vhd              ;         ;
-; Logic_Blocks/TimerAuxFSM.vhd            ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/TimerAuxFSM.vhd            ;         ;
-; Logic_Blocks/Debouncer.vhd              ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Debouncer.vhd              ;         ;
-; Logic_Blocks/FlipFlopD.vhd              ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/FlipFlopD.vhd              ;         ;
-; Logic_Blocks/BreadBakerFSM.vhd          ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/BreadBakerFSM.vhd          ;         ;
-; Logic_Blocks/ROM_KxN_1P_V1.vhd          ; yes             ; User VHDL File                     ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/ROM_KxN_1P_V1.vhd          ;         ;
-; BreadMaker.bdf                          ; yes             ; User Block Diagram/Schematic File  ; D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/BreadMaker.bdf                          ;         ;
-+-----------------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 578            ;
-;                                             ;                ;
-; Total combinational functions               ; 574            ;
-; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 227            ;
-;     -- 3 input functions                    ; 76             ;
-;     -- <=2 input functions                  ; 271            ;
-;                                             ;                ;
-; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 411            ;
-;     -- arithmetic mode                      ; 163            ;
-;                                             ;                ;
-; Total registers                             ; 204            ;
-;     -- Dedicated logic registers            ; 204            ;
-;     -- I/O registers                        ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 75             ;
-;                                             ;                ;
-; Embedded Multiplier 9-bit elements          ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 201            ;
-; Total fan-out                               ; 2429           ;
-; Average fan-out                             ; 2.62           ;
-+---------------------------------------------+----------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                 ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+------------------------+--------------+
-; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Entity Name            ; Library Name ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+------------------------+--------------+
-; |BreadMaker                        ; 574 (3)             ; 204 (0)                   ; 0           ; 0            ; 0       ; 0         ; 75   ; 0            ; |BreadMaker                                 ; BreadMaker             ; work         ;
-;    |Bin7SegDecoder:inst14|         ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|Bin7SegDecoder:inst14           ; Bin7SegDecoder         ; work         ;
-;    |Bin7SegDecoder:inst15|         ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|Bin7SegDecoder:inst15           ; Bin7SegDecoder         ; work         ;
-;    |Bin7SegDecoder:inst16|         ; 21 (21)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|Bin7SegDecoder:inst16           ; Bin7SegDecoder         ; work         ;
-;    |Bin7SegDecoder:inst17|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|Bin7SegDecoder:inst17           ; Bin7SegDecoder         ; work         ;
-;    |BinToBCD:inst23|               ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|BinToBCD:inst23                 ; BinToBCD               ; work         ;
-;    |BinToBCD:inst6|                ; 27 (27)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|BinToBCD:inst6                  ; BinToBCD               ; work         ;
-;    |BreadBakerFSM:iaaanst1|        ; 28 (28)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|BreadBakerFSM:iaaanst1          ; BreadBakerFSM          ; work         ;
-;    |ControlSystemUnit_v2:inst25|   ; 28 (28)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|ControlSystemUnit_v2:inst25     ; ControlSystemUnit_v2   ; work         ;
-;    |Debouncer:inst12|              ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|Debouncer:inst12                ; Debouncer              ; work         ;
-;    |Debouncer:inst13|              ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|Debouncer:inst13                ; Debouncer              ; work         ;
-;    |Debouncer:inst1|               ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|Debouncer:inst1                 ; Debouncer              ; work         ;
-;    |Debouncer:inst3|               ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|Debouncer:inst3                 ; Debouncer              ; work         ;
-;    |Debugger_InputsAt50MHZ:inst36| ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|Debugger_InputsAt50MHZ:inst36   ; Debugger_InputsAt50MHZ ; work         ;
-;    |Debugger_InputsAt50MHZ:inst37| ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|Debugger_InputsAt50MHZ:inst37   ; Debugger_InputsAt50MHZ ; work         ;
-;    |Debugger_InputsAt50MHZ:inst38| ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|Debugger_InputsAt50MHZ:inst38   ; Debugger_InputsAt50MHZ ; work         ;
-;    |FlipFlopD:inst|                ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|FlipFlopD:inst                  ; FlipFlopD              ; work         ;
-;    |Mux2_1:inst18|                 ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|Mux2_1:inst18                   ; Mux2_1                 ; work         ;
-;    |Mux3_1:inst19|                 ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|Mux3_1:inst19                   ; Mux3_1                 ; work         ;
-;    |PulseGenN:inst11|              ; 43 (43)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|PulseGenN:inst11                ; PulseGenN              ; work         ;
-;    |TimeExtra:inst4|               ; 11 (0)              ; 8 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|TimeExtra:inst4                 ; TimeExtra              ; work         ;
-;       |Counter:Counter|            ; 11 (11)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|TimeExtra:inst4|Counter:Counter ; Counter                ; work         ;
-;    |TimerAuxFSM:inst9|             ; 28 (28)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|TimerAuxFSM:inst9               ; TimerAuxFSM            ; work         ;
-;    |TimerN:inst5|                  ; 47 (47)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BreadMaker|TimerN:inst5                    ; TimerN                 ; work         ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |BreadMaker|ControlSystemUnit_v2:inst25|pState                                                                    ;
-+--------------------+--------------+-------------+-----------------+--------------------+--------------+-------------+-------------+
-; Name               ; pState.Extra ; pState.Stop ; pState.StartPrg ; pState.TimeProcess ; pState.Timer ; pState.Menu ; pState.Init ;
-+--------------------+--------------+-------------+-----------------+--------------------+--------------+-------------+-------------+
-; pState.Init        ; 0            ; 0           ; 0               ; 0                  ; 0            ; 0           ; 0           ;
-; pState.Menu        ; 0            ; 0           ; 0               ; 0                  ; 0            ; 1           ; 1           ;
-; pState.Timer       ; 0            ; 0           ; 0               ; 0                  ; 1            ; 0           ; 1           ;
-; pState.TimeProcess ; 0            ; 0           ; 0               ; 1                  ; 0            ; 0           ; 1           ;
-; pState.StartPrg    ; 0            ; 0           ; 1               ; 0                  ; 0            ; 0           ; 1           ;
-; pState.Stop        ; 0            ; 1           ; 0               ; 0                  ; 0            ; 0           ; 1           ;
-; pState.Extra       ; 1            ; 0           ; 0               ; 0                  ; 0            ; 0           ; 1           ;
-+--------------------+--------------+-------------+-----------------+--------------------+--------------+-------------+-------------+
-
-
-Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |BreadMaker|BreadBakerFSM:iaaanst1|s_currentState                                                                                                          ;
-+--------------------------+-----------------------+---------------------+-----------------------+-------------------------+--------------------------+----------------------+
-; Name                     ; s_currentState.TExtra ; s_currentState.TFim ; s_currentState.TCozer ; s_currentState.TLevedar ; s_currentState.TAmmassar ; s_currentState.TInit ;
-+--------------------------+-----------------------+---------------------+-----------------------+-------------------------+--------------------------+----------------------+
-; s_currentState.TInit     ; 0                     ; 0                   ; 0                     ; 0                       ; 0                        ; 0                    ;
-; s_currentState.TAmmassar ; 0                     ; 0                   ; 0                     ; 0                       ; 1                        ; 1                    ;
-; s_currentState.TLevedar  ; 0                     ; 0                   ; 0                     ; 1                       ; 0                        ; 1                    ;
-; s_currentState.TCozer    ; 0                     ; 0                   ; 1                     ; 0                       ; 0                        ; 1                    ;
-; s_currentState.TFim      ; 0                     ; 1                   ; 0                     ; 0                       ; 0                        ; 1                    ;
-; s_currentState.TExtra    ; 1                     ; 0                   ; 0                     ; 0                       ; 0                        ; 1                    ;
-+--------------------------+-----------------------+---------------------+-----------------------+-------------------------+--------------------------+----------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 204   ;
-; Number of registers using Synchronous Clear  ; 50    ;
-; Number of registers using Synchronous Load   ; 32    ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 119   ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; BreadBakerFSM:iaaanst1|s_stateChanged  ; 1       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |BreadMaker|PulseGenN:inst11|s_counter[25]             ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BreadMaker|TimeExtra:inst4|Counter:Counter|s_count[0] ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BreadMaker|TimerAuxFSM:inst9|s_count[4]               ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |BreadMaker|TimerN:inst5|s_count[4]                    ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |BreadMaker|Debouncer:inst3|s_debounceCnt[9]           ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |BreadMaker|Debouncer:inst13|s_debounceCnt[5]          ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |BreadMaker|Debouncer:inst1|s_debounceCnt[1]           ;
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |BreadMaker|Debouncer:inst12|s_debounceCnt[17]         ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |BreadMaker|Mux2_1:inst18|muxOut[0]                    ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |BreadMaker|Bin7SegDecoder:inst15|decOut_n[1]          ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |BreadMaker|BinToBCD:inst6|outBCD2[1]                  ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |BreadMaker|BinToBCD:inst23|outBCD[0]                  ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |BreadMaker|BinToBCD:inst6|outBCD[1]                   ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BreadMaker|Mux3_1:inst19|Mux3                         ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 20 LEs               ; 8 LEs                  ; No         ; |BreadMaker|ControlSystemUnit_v2:inst25|pState         ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; No         ; |BreadMaker|ControlSystemUnit_v2:inst25|pState         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-
-
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ROM_KxN_1P_V2:inst28 ;
-+----------------+-------+------------------------------------------+
-; Parameter Name ; Value ; Type                                     ;
-+----------------+-------+------------------------------------------+
-; k              ; 1     ; Signed Integer                           ;
-; n              ; 16    ; Signed Integer                           ;
-+----------------+-------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Debouncer:inst1 ;
-+----------------+-------+-------------------------------------+
-; Parameter Name ; Value ; Type                                ;
-+----------------+-------+-------------------------------------+
-; khzclkfreq     ; 50000 ; Signed Integer                      ;
-; msecmininwidth ; 100   ; Signed Integer                      ;
-; inpolarity     ; '0'   ; Enumerated                          ;
-; outpolarity    ; '1'   ; Enumerated                          ;
-+----------------+-------+-------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Debouncer:inst3 ;
-+----------------+-------+-------------------------------------+
-; Parameter Name ; Value ; Type                                ;
-+----------------+-------+-------------------------------------+
-; khzclkfreq     ; 50000 ; Signed Integer                      ;
-; msecmininwidth ; 100   ; Signed Integer                      ;
-; inpolarity     ; '0'   ; Enumerated                          ;
-; outpolarity    ; '1'   ; Enumerated                          ;
-+----------------+-------+-------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TimerN:inst5 ;
-+----------------+-------+----------------------------------+
-; Parameter Name ; Value ; Type                             ;
-+----------------+-------+----------------------------------+
-; n              ; 7     ; Signed Integer                   ;
-+----------------+-------+----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: PulseGenN:inst11 ;
-+----------------+----------+-----------------------------------+
-; Parameter Name ; Value    ; Type                              ;
-+----------------+----------+-----------------------------------+
-; n              ; 50000000 ; Signed Integer                    ;
-+----------------+----------+-----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Debouncer:inst13 ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; khzclkfreq     ; 50000 ; Signed Integer                       ;
-; msecmininwidth ; 100   ; Signed Integer                       ;
-; inpolarity     ; '0'   ; Enumerated                           ;
-; outpolarity    ; '1'   ; Enumerated                           ;
-+----------------+-------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: TimerAuxFSM:inst9 ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; n              ; 8     ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ROM_KxN_1P_V1:inst27 ;
-+----------------+-------+------------------------------------------+
-; Parameter Name ; Value ; Type                                     ;
-+----------------+-------+------------------------------------------+
-; k              ; 4     ; Signed Integer                           ;
-; n              ; 8     ; Signed Integer                           ;
-+----------------+-------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Debouncer:inst12 ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; khzclkfreq     ; 50000 ; Signed Integer                       ;
-; msecmininwidth ; 100   ; Signed Integer                       ;
-; inpolarity     ; '0'   ; Enumerated                           ;
-; outpolarity    ; '1'   ; Enumerated                           ;
-+----------------+-------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Mux2_1:inst18 ;
-+----------------+-------+-----------------------------------+
-; Parameter Name ; Value ; Type                              ;
-+----------------+-------+-----------------------------------+
-; n              ; 4     ; Signed Integer                    ;
-+----------------+-------+-----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "TimeExtra:inst4|Counter:Counter" ;
-+--------+-------+----------+---------------------------------+
-; Port   ; Type  ; Severity ; Details                         ;
-+--------+-------+----------+---------------------------------+
-; datain ; Input ; Info     ; Stuck at GND                    ;
-+--------+-------+----------+---------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 75                          ;
-; cycloneiii_ff         ; 204                         ;
-;     ENA               ; 72                          ;
-;     ENA SCLR          ; 15                          ;
-;     ENA SLD           ; 32                          ;
-;     SCLR              ; 35                          ;
-;     plain             ; 50                          ;
-; cycloneiii_lcell_comb ; 585                         ;
-;     arith             ; 163                         ;
-;         2 data inputs ; 162                         ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 422                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 26                          ;
-;         2 data inputs ; 92                          ;
-;         3 data inputs ; 75                          ;
-;         4 data inputs ; 227                         ;
-;                       ;                             ;
-; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 4.85                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -515,64 +162,64 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri May 26 15:30:14 2023
+    Info: Processing started: Fri May 26 15:41:02 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BreadMaker -c BreadMaker
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/debugger_inputsat50mhz.vhd
-    Info (12022): Found design unit 1: Debugger_InputsAt50MHZ-behaviour File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Debugger_InputsAt50MHZ.vhd Line: 13
-    Info (12023): Found entity 1: Debugger_InputsAt50MHZ File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Debugger_InputsAt50MHZ.vhd Line: 6
+    Info (12022): Found design unit 1: Debugger_InputsAt50MHZ-behaviour File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/Debugger_InputsAt50MHZ.vhd Line: 13
+    Info (12023): Found entity 1: Debugger_InputsAt50MHZ File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/Debugger_InputsAt50MHZ.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/controlsystemunit_v2.vhd
-    Info (12022): Found design unit 1: ControlSystemUnit_v2-BEHAVIOR File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/ControlSystemUnit_v2.vhd Line: 41
-    Info (12023): Found entity 1: ControlSystemUnit_v2 File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/ControlSystemUnit_v2.vhd Line: 22
+    Info (12022): Found design unit 1: ControlSystemUnit_v2-BEHAVIOR File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/ControlSystemUnit_v2.vhd Line: 41
+    Info (12023): Found entity 1: ControlSystemUnit_v2 File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/ControlSystemUnit_v2.vhd Line: 22
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/mux3_1.vhd
-    Info (12022): Found design unit 1: Mux3_1-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Mux3_1.vhd Line: 16
-    Info (12023): Found entity 1: Mux3_1 File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Mux3_1.vhd Line: 6
+    Info (12022): Found design unit 1: Mux3_1-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/Mux3_1.vhd Line: 16
+    Info (12023): Found entity 1: Mux3_1 File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/Mux3_1.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/rom_kxn_1p_v2.vhd
-    Info (12022): Found design unit 1: ROM_KxN_1P_V2-Behaviour File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/ROM_KxN_1P_V2.vhd Line: 17
-    Info (12023): Found entity 1: ROM_KxN_1P_V2 File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/ROM_KxN_1P_V2.vhd Line: 7
+    Info (12022): Found design unit 1: ROM_KxN_1P_V2-Behaviour File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/ROM_KxN_1P_V2.vhd Line: 17
+    Info (12023): Found entity 1: ROM_KxN_1P_V2 File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/ROM_KxN_1P_V2.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/mux2_1.vhd
-    Info (12022): Found design unit 1: Mux2_1-BehavAssign File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Mux2_1.vhd Line: 13
-    Info (12023): Found entity 1: Mux2_1 File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Mux2_1.vhd Line: 4
+    Info (12022): Found design unit 1: Mux2_1-BehavAssign File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/Mux2_1.vhd Line: 13
+    Info (12023): Found entity 1: Mux2_1 File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/Mux2_1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/bintobcd.vhd
-    Info (12022): Found design unit 1: BinToBCD-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/BinToBCD.vhd Line: 13
-    Info (12023): Found entity 1: BinToBCD File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/BinToBCD.vhd Line: 5
+    Info (12022): Found design unit 1: BinToBCD-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/BinToBCD.vhd Line: 13
+    Info (12023): Found entity 1: BinToBCD File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/BinToBCD.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/bin7segdecoder.vhd
-    Info (12022): Found design unit 1: Bin7SegDecoder-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Bin7SegDecoder.vhd Line: 12
-    Info (12023): Found entity 1: Bin7SegDecoder File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Bin7SegDecoder.vhd Line: 4
+    Info (12022): Found design unit 1: Bin7SegDecoder-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/Bin7SegDecoder.vhd Line: 12
+    Info (12023): Found entity 1: Bin7SegDecoder File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/Bin7SegDecoder.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/timern.vhd
-    Info (12022): Found design unit 1: TimerN-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/TimerN.vhd Line: 17
-    Info (12023): Found entity 1: TimerN File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/TimerN.vhd Line: 5
+    Info (12022): Found design unit 1: TimerN-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/TimerN.vhd Line: 17
+    Info (12023): Found entity 1: TimerN File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/TimerN.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/timeextra.vhd
-    Info (12022): Found design unit 1: TimeExtra-Structural File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/TimeExtra.vhd Line: 14
-    Info (12023): Found entity 1: TimeExtra File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/TimeExtra.vhd Line: 4
+    Info (12022): Found design unit 1: TimeExtra-Structural File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/TimeExtra.vhd Line: 14
+    Info (12023): Found entity 1: TimeExtra File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/TimeExtra.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/counter.vhd
-    Info (12022): Found design unit 1: Counter-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Counter.vhd Line: 17
-    Info (12023): Found entity 1: Counter File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Counter.vhd Line: 5
+    Info (12022): Found design unit 1: Counter-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/Counter.vhd Line: 17
+    Info (12023): Found entity 1: Counter File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/Counter.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/pulsegenn.vhd
-    Info (12022): Found design unit 1: PulseGenN-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/PulseGenN.vhd Line: 12
-    Info (12023): Found entity 1: PulseGenN File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/PulseGenN.vhd Line: 5
+    Info (12022): Found design unit 1: PulseGenN-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/PulseGenN.vhd Line: 12
+    Info (12023): Found entity 1: PulseGenN File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/PulseGenN.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/timerauxfsm.vhd
-    Info (12022): Found design unit 1: TimerAuxFSM-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/TimerAuxFSM.vhd Line: 18
-    Info (12023): Found entity 1: TimerAuxFSM File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/TimerAuxFSM.vhd Line: 5
+    Info (12022): Found design unit 1: TimerAuxFSM-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/TimerAuxFSM.vhd Line: 18
+    Info (12023): Found entity 1: TimerAuxFSM File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/TimerAuxFSM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/debouncer.vhd
-    Info (12022): Found design unit 1: Debouncer-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Debouncer.vhd Line: 15
-    Info (12023): Found entity 1: Debouncer File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/Debouncer.vhd Line: 5
+    Info (12022): Found design unit 1: Debouncer-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/Debouncer.vhd Line: 15
+    Info (12023): Found entity 1: Debouncer File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/Debouncer.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/controlsystemunit.vhd
-    Info (12022): Found design unit 1: ControlSystemUnit-BEHAVIOR File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/ControlSystemUnit.vhd Line: 41
-    Info (12023): Found entity 1: ControlSystemUnit File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/ControlSystemUnit.vhd Line: 22
+    Info (12022): Found design unit 1: ControlSystemUnit-BEHAVIOR File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/ControlSystemUnit.vhd Line: 41
+    Info (12023): Found entity 1: ControlSystemUnit File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/ControlSystemUnit.vhd Line: 22
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/flipflopd.vhd
-    Info (12022): Found design unit 1: FlipFlopD-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/FlipFlopD.vhd Line: 12
-    Info (12023): Found entity 1: FlipFlopD File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/FlipFlopD.vhd Line: 4
+    Info (12022): Found design unit 1: FlipFlopD-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/FlipFlopD.vhd Line: 12
+    Info (12023): Found entity 1: FlipFlopD File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/FlipFlopD.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/breadbakerfsm.vhd
-    Info (12022): Found design unit 1: BreadBakerFSM-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/BreadBakerFSM.vhd Line: 28
-    Info (12023): Found entity 1: BreadBakerFSM File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/BreadBakerFSM.vhd Line: 5
+    Info (12022): Found design unit 1: BreadBakerFSM-Behavioral File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/BreadBakerFSM.vhd Line: 28
+    Info (12023): Found entity 1: BreadBakerFSM File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/BreadBakerFSM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/rom_kxn_1p_v1.vhd
-    Info (12022): Found design unit 1: ROM_KxN_1P_V1-Behaviour File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/ROM_KxN_1P_V1.vhd Line: 17
-    Info (12023): Found entity 1: ROM_KxN_1P_V1 File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/ROM_KxN_1P_V1.vhd Line: 7
+    Info (12022): Found design unit 1: ROM_KxN_1P_V1-Behaviour File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/ROM_KxN_1P_V1.vhd Line: 17
+    Info (12023): Found entity 1: ROM_KxN_1P_V1 File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/ROM_KxN_1P_V1.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file logic_blocks/clkdividern.vhd
-    Info (12022): Found design unit 1: ClkDividerN-RTL File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/ClkDividerN.vhd Line: 11
-    Info (12023): Found entity 1: ClkDividerN File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/ClkDividerN.vhd Line: 5
+    Info (12022): Found design unit 1: ClkDividerN-RTL File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/ClkDividerN.vhd Line: 11
+    Info (12023): Found entity 1: ClkDividerN File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v3/Logic_Blocks/ClkDividerN.vhd Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file breadmaker.bdf
     Info (12023): Found entity 1: BreadMaker
 Info (12127): Elaborating entity "BreadMaker" for the top level hierarchy
@@ -586,50 +233,15 @@ Warning (275080): Converted elements in bus name "outBCD" using legacy naming ru
     Warning (275081): Converted element name(s) from "outBCD[3..0]" to "outBCD3..0"
 Warning (275080): Converted elements in bus name "outBCD2" using legacy naming rules. Make any assignments on the new names, not on the original names.
     Warning (275081): Converted element name(s) from "outBCD2[3..0]" to "outBCD23..0"
-Info (12128): Elaborating entity "Bin7SegDecoder" for hierarchy "Bin7SegDecoder:inst30"
-Info (12128): Elaborating entity "ROM_KxN_1P_V2" for hierarchy "ROM_KxN_1P_V2:inst28"
-Info (12128): Elaborating entity "BreadBakerFSM" for hierarchy "BreadBakerFSM:iaaanst1"
-Info (12128): Elaborating entity "ControlSystemUnit_v2" for hierarchy "ControlSystemUnit_v2:inst25"
-Info (12128): Elaborating entity "Debouncer" for hierarchy "Debouncer:inst1"
-Info (12128): Elaborating entity "TimerN" for hierarchy "TimerN:inst5"
-Info (12128): Elaborating entity "PulseGenN" for hierarchy "PulseGenN:inst11"
-Info (12128): Elaborating entity "FlipFlopD" for hierarchy "FlipFlopD:inst"
-Info (12128): Elaborating entity "TimerAuxFSM" for hierarchy "TimerAuxFSM:inst9"
-Info (12128): Elaborating entity "ROM_KxN_1P_V1" for hierarchy "ROM_KxN_1P_V1:inst27"
-Info (12128): Elaborating entity "TimeExtra" for hierarchy "TimeExtra:inst4"
-Info (12129): Elaborating entity "Counter" using architecture "A:behavioral" for hierarchy "TimeExtra:inst4|Counter:Counter" File: D:/Universidade_LECI/Ano1_Sem2/Lab_Sistemas_Digitais/Meus_Exercicios/LSD_Project/#Quartus_Prime_Project/Fase 2_v2/Logic_Blocks/TimeExtra.vhd Line: 20
-Info (12128): Elaborating entity "Mux3_1" for hierarchy "Mux3_1:inst19"
-Info (12128): Elaborating entity "BinToBCD" for hierarchy "BinToBCD:inst23"
-Info (12128): Elaborating entity "Mux2_1" for hierarchy "Mux2_1:inst18"
-Info (12128): Elaborating entity "Debugger_InputsAt50MHZ" for hierarchy "Debugger_InputsAt50MHZ:inst36"
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[6]" is stuck at GND
-    Warning (13410): Pin "HEX0[4]" is stuck at GND
-    Warning (13410): Pin "HEX0[3]" is stuck at VCC
-    Warning (13410): Pin "HEX1[6]" is stuck at GND
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC
-    Warning (13410): Pin "HEX1[4]" is stuck at GND
-    Warning (13410): Pin "HEX1[3]" is stuck at GND
-    Warning (13410): Pin "HEX1[2]" is stuck at GND
-    Warning (13410): Pin "HEX1[1]" is stuck at VCC
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC
-    Warning (13410): Pin "HEX2[2]" is stuck at VCC
-    Warning (13410): Pin "HEX2[1]" is stuck at VCC
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC
-    Warning (13410): Pin "LEDG[6]" is stuck at GND
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 653 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 69 output pins
-    Info (21061): Implemented 578 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
-    Info: Peak virtual memory: 4856 megabytes
-    Info: Processing ended: Fri May 26 15:30:29 2023
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:10
+Error (275044): Port "reset" of type TimeExtra of instance "inst4" is missing source signal
+Error (275044): Port "newPrg" of type ControlSystemUnit_v2 of instance "inst25" is missing source signal
+Error (275044): Port "enable" of type Bin7SegDecoder of instance "inst14" is missing source signal
+Error (275044): Port "enable" of type Bin7SegDecoder of instance "inst15" is missing source signal
+Error (12153): Can't elaborate top-level user hierarchy
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 5 errors, 11 warnings
+    Error: Peak virtual memory: 4785 megabytes
+    Error: Processing ended: Fri May 26 15:41:10 2023
+    Error: Elapsed time: 00:00:08
+    Error: Total CPU time (on all processors): 00:00:08
 
 

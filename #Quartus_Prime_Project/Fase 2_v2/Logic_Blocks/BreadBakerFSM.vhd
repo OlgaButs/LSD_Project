@@ -111,6 +111,7 @@ begin
        timeVal <= s_time;
        if (timeExp = '1') then
          s_nextState <= TLevedar;
+			InitLoad <= '1';---------------------------------------
        elsif start_stop = '0' then
          timeEnable1 <= '0';
          s_mensagens <= '1';
@@ -124,6 +125,7 @@ begin
        timeVal <= s_time;
        if (timeExp = '1') then
          s_nextState <= TCozer;
+			InitLoad <= '1';---------------------------------------
        elsif start_stop = '0' then
          timeEnable1 <= '0';
          s_mensagens <= '1';

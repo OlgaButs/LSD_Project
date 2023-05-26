@@ -3,10 +3,10 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -5.603
-TNS   : -794.767
+Slack : -6.923
+TNS   : -795.922
 
-Type  : Slow 1200mV 85C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TInit'
+Type  : Slow 1200mV 85C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
 Slack : 0.210
 TNS   : 0.000
 
@@ -19,10 +19,10 @@ Slack : 0.210
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : 0.133
+Slack : 0.404
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TInit'
+Type  : Slow 1200mV 85C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
 Slack : 0.445
 TNS   : 0.000
 
@@ -38,7 +38,7 @@ Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
 TNS   : -261.285
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TInit'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
 Slack : -1.285
 TNS   : -1.285
 
@@ -51,10 +51,10 @@ Slack : -1.285
 TNS   : -1.285
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -5.113
-TNS   : -711.171
+Slack : -6.372
+TNS   : -713.949
 
-Type  : Slow 1200mV 0C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TInit'
+Type  : Slow 1200mV 0C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
 Slack : 0.297
 TNS   : 0.000
 
@@ -67,10 +67,10 @@ Slack : 0.297
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.082
+Slack : 0.355
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TInit'
+Type  : Slow 1200mV 0C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
 Slack : 0.398
 TNS   : 0.000
 
@@ -86,7 +86,7 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
 TNS   : -261.285
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TInit'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
 Slack : -1.285
 TNS   : -1.285
 
@@ -99,14 +99,14 @@ Slack : -1.285
 TNS   : -1.285
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -2.533
-TNS   : -294.470
+Slack : -3.255
+TNS   : -292.733
 
 Type  : Fast 1200mV 0C Model Setup 'ControlSystemUnit_v2:inst25|pState.Init'
 Slack : 0.624
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TInit'
+Type  : Fast 1200mV 0C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
 Slack : 0.626
 TNS   : 0.000
 
@@ -115,14 +115,14 @@ Slack : 0.626
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : -0.108
-TNS   : -0.108
+Slack : 0.157
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'ControlSystemUnit_v2:inst25|pState.Init'
 Slack : 0.206
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TInit'
+Type  : Fast 1200mV 0C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
 Slack : 0.208
 TNS   : 0.000
 
@@ -132,9 +132,9 @@ TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -216.325
+TNS   : -216.167
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TInit'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
 Slack : -1.000
 TNS   : -1.000
 

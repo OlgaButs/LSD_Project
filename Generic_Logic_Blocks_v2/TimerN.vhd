@@ -1,50 +1,59 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
 
-entity TimerN is
-	generic(N : positive := 5);
-	port(
-		clk      : in std_logic;
-		reset    : in std_logic;
-		enable   : in std_logic;
-		start    : in std_logic;
-		timerOut : out std_logic;
-		cnt		: out std_logic_vector(7 downto 0)
+
+-- Interface:
+ENTITY TimerN IS
+	GENERIC (N : POSITIVE := 5);
+	PORT (
+		clk : IN STD_LOGIC;
+		reset : IN STD_LOGIC;
+		enable : IN STD_LOGIC;
+		start : IN STD_LOGIC;
+		timerOut : OUT STD_LOGIC;
+		cnt : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
-end TimerN;
+END TimerN;
 
-architecture Behavioral of TimerN is
-	signal s_result : std_logic;
-	signal s_count  : integer := 0;
-begin
-	assert(N >= 2);
 
-	process(clk)
-	begin
-		if (rising_edge(clk)) then
-			if (reset = '1') then
+-- Architecture:
+ARCHITECTURE Behavioral OF TimerN IS
+
+	SIGNAL s_result : STD_LOGIC;
+	SIGNAL s_count : INTEGER := 0;
+	
+BEGIN
+	ASSERT(N >= 2);
+
+	PROCESS (clk)
+	BEGIN
+		IF (rising_edge(clk)) THEN
+			IF (reset = '1') THEN
 				s_result <= '0';
-				s_count  <= N;
-			elsif (enable = '1') then
-				if (s_count = 0) then
-					if (start = '1') then
+				s_count <= N;
+				ELSIF (enable = '1') THEN
+				IF (s_count = 0) THEN
+					IF (start = '1') THEN
 						s_count <= s_count + 1;
-					end if;
+					END IF;
 					s_result <= '0';
-				else
-					if (s_count = (N - 1)) then
+					ELSE
+					IF (s_count = (N - 1)) THEN
 						s_result <= '1';
-						s_count  <= 0;
-					else
+						s_count <= 0;
+						ELSE
 						s_result <= '0';
-						s_count  <= s_count + 1; 
-					end if;
-				end if;
-			end if;
-		end if;
-	end process;
+						s_count <= s_count + 1;
+					END IF;
+				END IF;
+			END IF;
+		END IF;
+	END PROCESS;
 
 	timerOut <= s_result;
-	cnt <= std_logic_vector(to_unsigned(s_count,8));
-end Behavioral;
+	cnt <= STD_LOGIC_VECTOR(to_unsigned(s_count, 8));
+	
+END Behavioral;
+
+-- NOTA: Bloco Lógico Standard Retirado das Aulas de LSD.

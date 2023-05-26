@@ -1,29 +1,32 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
 
 
 -- Interface:
-entity ROM_KxN_1P_V2 is
-	generic( K : integer := 1;
-				N : integer := 16);
-				
-	port( address : in std_logic_vector((K-1) downto 0);
-			dataOut : out std_logic_vector((N-1) downto 0));
-end ROM_KxN_1P_V2;
+ENTITY ROM_KxN_1P_V2 IS
+	GENERIC (
+		K : INTEGER := 1;
+		N : INTEGER := 16);
+
+	PORT (
+		address : IN STD_LOGIC_VECTOR((K - 1) DOWNTO 0);
+		dataOut : OUT STD_LOGIC_VECTOR((N - 1) DOWNTO 0));
+END ROM_KxN_1P_V2;
 
 
 -- Arquitetura:
-architecture Behaviour of ROM_KxN_1P_V2 is
+ARCHITECTURE Behaviour OF ROM_KxN_1P_V2 IS
 
-	constant WORDS : integer := (2**K);
-	
-	type TMemory is array(0 to (WORDS-1)) of std_logic_vector((N-1) downto 0);
+	CONSTANT WORDS : INTEGER := (2 ** K);
+	TYPE TMemory IS ARRAY(0 TO (WORDS - 1)) OF STD_LOGIC_VECTOR((N - 1) DOWNTO 0);
 
-	constant c_memory : TMemory := ("0101101111001101", -- STOP
-											  "1010101011001110");-- --ON
-begin
+	CONSTANT c_memory : TMemory := ("1010101011001110", -- ON
+											  "0101101111001101");-- STOP
+BEGIN
 
 	dataOut <= c_memory(to_integer(unsigned(address)));
-	
-end Behaviour;
+
+END Behaviour;
+
+-- NOTA: Bloco Lógico Standard Retirado das Aulas de LSD.

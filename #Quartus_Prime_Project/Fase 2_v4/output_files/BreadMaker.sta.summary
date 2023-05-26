@@ -1,0 +1,149 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -6.283
+TNS   : -813.577
+
+Type  : Slow 1200mV 85C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
+Slack : 0.210
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.210
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.210
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -261.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -5.567
+TNS   : -729.083
+
+Type  : Slow 1200mV 0C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.353
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -261.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -2.950
+TNS   : -301.649
+
+Type  : Fast 1200mV 0C Model Setup 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.624
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
+Slack : 0.626
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.626
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.040
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.206
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -216.253
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TAmmassar'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : -1.000
+TNS   : -1.000
+
+------------------------------------------------------------

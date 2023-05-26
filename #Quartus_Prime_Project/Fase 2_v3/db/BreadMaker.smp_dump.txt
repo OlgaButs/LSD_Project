@@ -1,0 +1,19 @@
+
+State Machine - |BreadMaker|ControlSystemUnit_v2:inst25|pState
+Name pState.Extra pState.Stop pState.StartPrg pState.TimeProcess pState.Timer pState.Menu pState.Init 
+pState.Init 0 0 0 0 0 0 0 
+pState.Menu 0 0 0 0 0 1 1 
+pState.Timer 0 0 0 0 1 0 1 
+pState.TimeProcess 0 0 0 1 0 0 1 
+pState.StartPrg 0 0 1 0 0 0 1 
+pState.Stop 0 1 0 0 0 0 1 
+pState.Extra 1 0 0 0 0 0 1 
+
+State Machine - |BreadMaker|BreadBakerFSM:iaaanst1|s_currentState
+Name s_currentState.TExtra s_currentState.TFim s_currentState.TCozer s_currentState.TLevedar s_currentState.TAmmassar s_currentState.TInit 
+s_currentState.TInit 0 0 0 0 0 0 
+s_currentState.TAmmassar 0 0 0 0 1 1 
+s_currentState.TLevedar 0 0 0 1 0 1 
+s_currentState.TCozer 0 0 1 0 0 1 
+s_currentState.TFim 0 1 0 0 0 1 
+s_currentState.TExtra 1 0 0 0 0 1 

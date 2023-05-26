@@ -1,33 +1,34 @@
-library ieee;
-use ieee.std_logic_1164.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
 
 
 -- Interface:
-entity Debugger_InputsAt50MHZ is
-port( input  : in  std_logic;
-		output : out std_logic);
-end Debugger_InputsAt50MHZ;
+ENTITY Debugger_InputsAt50MHZ IS
+	PORT (
+		input : IN STD_LOGIC;
+		output : OUT STD_LOGIC);
+END Debugger_InputsAt50MHZ;
 
 
 -- Architecture:
-architecture behaviour of Debugger_InputsAt50MHZ is
+ARCHITECTURE behaviour OF Debugger_InputsAt50MHZ IS
 
-	signal startStop : std_logic := '0';
+	SIGNAL startStop : STD_LOGIC := '0';
 
-begin
+BEGIN
 
-	main : process(input)
-	begin
-	
-		if (input = '1') then
-			if (startStop = '1') then
+	main : PROCESS (input)
+	BEGIN
+
+		IF (input = '1') THEN
+			IF (startStop = '1') THEN
 				startStop <= '0';
-			else
+				ELSE
 				startStop <= '1';
-			end if;
-		end if;
-	end process;
-	
+			END IF;
+		END IF;
+	END PROCESS;
+
 	output <= startStop;
-	
-end behaviour;
+
+END behaviour;

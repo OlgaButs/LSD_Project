@@ -1,30 +1,37 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
-use IEEE.NUMERIC_STD.all;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 
-entity ClkDividerN is
-	generic(divFactor : natural := 4);
-	port(clkIn	: in  std_logic;
-		  clkOut	: out std_logic);
-end ClkDividerN;
 
-architecture RTL of ClkDividerN is
+-- Interface:
+ENTITY ClkDividerN IS
+	GENERIC (divFactor : NATURAL := 4);
+	PORT (
+		clkIn : IN STD_LOGIC;
+		clkOut : OUT STD_LOGIC);
+END ClkDividerN;
 
-	signal s_divCounter : natural;
 
-begin
-	process(clkIn)
-	begin
-		if (rising_edge(clkIn)) then
-			if (s_divCounter = divFactor - 1) then
-				clkOut		 <= '0';
+-- Architecture:
+ARCHITECTURE RTL OF ClkDividerN IS
+
+	SIGNAL s_divCounter : NATURAL;
+	
+BEGIN
+	PROCESS (clkIn)
+	BEGIN
+		IF (rising_edge(clkIn)) THEN
+			IF (s_divCounter = divFactor - 1) THEN
+				clkOut <= '0';
 				s_divCounter <= 0;
-			else
-				if (s_divCounter = (divFactor / 2 - 1)) then
-					clkOut	 <= '1';
-				end if;
+			ELSE
+				IF (s_divCounter = (divFactor / 2 - 1)) THEN
+					clkOut <= '1';
+				END IF;
 				s_divCounter <= s_divCounter + 1;
-			end if;
-		end if;
-	end process;
-end RTL;
+			END IF;
+		END IF;
+	END PROCESS;
+END RTL;
+
+-- NOTA: Bloco Lógico Standard Retirado das Aulas de LSD.

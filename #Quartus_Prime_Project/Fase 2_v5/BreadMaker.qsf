@@ -580,7 +580,6 @@ set_location_assignment PIN_F14 -to EX_IO[4]
 set_location_assignment PIN_E10 -to EX_IO[5]
 set_location_assignment PIN_D9 -to EX_IO[6]
 set_global_assignment -name VHDL_FILE Logic_Blocks/Debugger_InputsAt50MHZ.vhd
-set_global_assignment -name VHDL_FILE Logic_Blocks/ControlSystemUnit_v2.vhd
 set_global_assignment -name VHDL_FILE Logic_Blocks/Mux3_1.vhd
 set_global_assignment -name VHDL_FILE Logic_Blocks/ROM_KxN_1P_V2.vhd
 set_global_assignment -name VHDL_FILE Logic_Blocks/Mux2_1.vhd
@@ -592,7 +591,7 @@ set_global_assignment -name VHDL_FILE Logic_Blocks/Counter.vhd
 set_global_assignment -name VHDL_FILE Logic_Blocks/PulseGenN.vhd
 set_global_assignment -name VHDL_FILE Logic_Blocks/TimerAuxFSM.vhd
 set_global_assignment -name VHDL_FILE Logic_Blocks/Debouncer.vhd
-set_global_assignment -name VHDL_FILE Logic_Blocks/ControlSystemUnit.vhd
+set_global_assignment -name VHDL_FILE Logic_Blocks/ControlSystemUnit_v2.vhd
 set_global_assignment -name VHDL_FILE Logic_Blocks/FlipFlopD.vhd
 set_global_assignment -name VHDL_FILE Logic_Blocks/BreadBakerFSM.vhd
 set_global_assignment -name VHDL_FILE Logic_Blocks/ROM_KxN_1P_V1.vhd

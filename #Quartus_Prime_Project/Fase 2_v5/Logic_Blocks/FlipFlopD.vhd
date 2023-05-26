@@ -1,24 +1,31 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
-entity FlipFlopD is
-	port(	clk	 :	in	std_logic;
-			reset  : in std_logic;
-			enable :	in std_logic;
-			dataIn :	in std_logic;
-			dataOut:	out std_logic);
-end FlipFlopD;
 
-architecture Behavioral of FlipFlopD is
-begin
-	process(clk)
-	begin
-		if(rising_edge(clk)) then
-			if(reset='1') then
+-- Interface:
+ENTITY FlipFlopD IS
+	PORT (
+		clk : IN STD_LOGIC;
+		reset : IN STD_LOGIC;
+		enable : IN STD_LOGIC;
+		dataIn : IN STD_LOGIC;
+		dataOut : OUT STD_LOGIC);
+END FlipFlopD;
+
+
+-- Architecture:
+ARCHITECTURE Behavioral OF FlipFlopD IS
+BEGIN
+	PROCESS (clk)
+	BEGIN
+		IF (rising_edge(clk)) THEN
+			IF (reset = '1') THEN
 				dataOut <= '0';
-			elsif (enable='1') then
+				ELSIF (enable = '1') THEN
 				dataOut <= dataIn;
-			end if;
-		end if;
-	end process;
-end Behavioral;
+			END IF;
+		END IF;
+	END PROCESS;
+END Behavioral;
+
+-- NOTA: Bloco Lógico Standard Retirado das Aulas de LSD.

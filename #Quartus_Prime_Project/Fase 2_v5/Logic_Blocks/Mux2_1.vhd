@@ -1,16 +1,24 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
-entity Mux2_1 is
-  generic (
-    N : positive := 4);
-  port (sel : in  std_logic;
-    input0  : in  std_logic_vector(N-1 downto 0);
-    input1  : in  std_logic_vector(N-1 downto 0);
-    muxOut  : out std_logic_vector(N-1 downto 0));
-end Mux2_1;
 
-architecture BehavAssign of Mux2_1 is
-begin
-  muxOut <= input0 when (sel = '0') else input1;
-end BehavAssign;
+-- Interface:
+ENTITY Mux2_1 IS
+	GENERIC (
+		N : POSITIVE := 4);
+	PORT (
+		sel : IN STD_LOGIC;
+		input0 : IN STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+		input1 : IN STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+		muxOut : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0));
+END Mux2_1;
+
+
+-- Architecture:
+ARCHITECTURE BehavAssign OF Mux2_1 IS
+BEGIN
+	muxOut <= input0 WHEN (sel = '0') ELSE
+	input1;
+END BehavAssign;
+
+-- NOTA: Bloco Lógico Standard Retirado das Aulas de LSD.

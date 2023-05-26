@@ -1,30 +1,39 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
-use IEEE.NUMERIC_STD.all;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 
-entity PulseGenN is
-	generic(N : positive := 4);
-	port (clkIn	:	in std_logic;
-			reset :  in std_logic;
-			pulse : out std_logic);
-end PulseGenN;
 
-architecture Behavioral of PulseGenN is
-	signal s_counter	:	natural;
-begin
-	process(clkIn)
-	begin
-		if(rising_edge(clkIn)) then
-			if(reset = '1') then
+-- Interface:
+ENTITY PulseGenN IS
+	GENERIC (N : POSITIVE := 4);
+	PORT (
+		clkIn : IN STD_LOGIC;
+		reset : IN STD_LOGIC;
+		pulse : OUT STD_LOGIC);
+END PulseGenN;
+
+
+-- Architecture:
+ARCHITECTURE Behavioral OF PulseGenN IS
+
+	SIGNAL s_counter : NATURAL;
+	
+BEGIN
+	PROCESS (clkIn)
+	BEGIN
+		IF (rising_edge(clkIn)) THEN
+			IF (reset = '1') THEN
 				pulse <= '0';
 				s_counter <= 0;
-			elsif(s_counter = N-1) then
- 				pulse <= '1';                  
-				s_counter<= 0;
-			else
-				s_counter <= s_counter+1;
-				pulse <='0';
-			end if;
-			end if;
-		end process;
-end Behavioral;
+				ELSIF (s_counter = N - 1) THEN
+				pulse <= '1';
+				s_counter <= 0;
+				ELSE
+				s_counter <= s_counter + 1;
+				pulse <= '0';
+			END IF;
+		END IF;
+	END PROCESS;
+END Behavioral;
+
+-- NOTA: Bloco Lógico Standard Retirado das Aulas de LSD.

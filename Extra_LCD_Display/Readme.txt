@@ -20,3 +20,7 @@ How to: Use the LCD display of DE2-115.
 		-> LCD_DATA[7]
 
 --> NOTA: Estas são as únicas coisas que importam aquando da instanciação deste dispositivo. A arquitetura é demasiado complexa para estar a analisar, deixando-se os créditos para o seu desenvolvedor Gerry O'Brien.
+
+
+
+NOTA: PARA CONVERTER (USANDO O PROGRAMA JAVA), FAZER "java Conversor_StringToHex.java".

@@ -50,3 +50,5 @@ BEGIN
 	count <= STD_LOGIC_VECTOR(s_count);
 	
 END Behavioral;
+
+-- NOTA: Bloco Lógico Standard Retirado das Aulas de LSD.

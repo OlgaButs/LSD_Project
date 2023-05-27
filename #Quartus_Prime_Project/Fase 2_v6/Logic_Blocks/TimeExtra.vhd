@@ -32,7 +32,7 @@ BEGIN
 			dataIn => "00000000",
 			count => s_count);
 
-	S_LD <= '1' WHEN (s_count(2) = '1' AND s_count(0) = '1') ELSE
+	S_LD <= '1' WHEN (s_count(1) = '1' AND s_count(2) = '1') ELSE
 	'0';
 	cnt <= s_count;
 END Structural;

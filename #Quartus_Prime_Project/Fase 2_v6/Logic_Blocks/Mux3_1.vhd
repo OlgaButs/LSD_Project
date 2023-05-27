@@ -29,3 +29,5 @@ BEGIN
 		END CASE;
 	END PROCESS;
 END Behavioral;
+
+-- NOTA: Bloco Lógico Standard Retirado das Aulas de LSD.

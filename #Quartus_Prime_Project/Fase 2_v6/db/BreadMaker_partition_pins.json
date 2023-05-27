@@ -4,6 +4,14 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "LCD_RS",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_EN",
+					"strict" : false
+				},
+				{
 					"name" : "HEX0[5]",
 					"strict" : false
 				},
@@ -165,6 +173,38 @@
 				},
 				{
 					"name" : "HEX7[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[0]",
 					"strict" : false
 				},
 				{

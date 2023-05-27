@@ -60,6 +60,14 @@ BEGIN
 				s_currentState <= TInit;
 				s_stateChanged <= '1';
 			ELSE
+				IF (s_valueExtra /= "00000000") THEN -- Para evitar a mensagem de inferição de latch involuntária.
+						s_temp <= '1';
+				ELSE s_temp <= '0';
+				END IF;
+				IF (S_currentState = TExtra) THEN -- Para evitar a mensagem de inferição de latch involuntária.
+					s_valueExtra <= timeExtra;
+				END IF;
+				
 				IF s_currentState /= s_nextState THEN
 					s_stateChanged <= '1';
 				ELSE
@@ -111,7 +119,7 @@ BEGIN
 
 			WHEN TInit => -- MENU PRINCIPAL.
 				s_mensagens <= '1';
-				s_temp <= '0';
+				--s_temp <= '0';
 				InitLoad <= '1';
 				timeVal <= s_time;
 				IF (start_stop = '1') THEN
@@ -184,18 +192,18 @@ BEGIN
 				s_mensagens <= '1';
 				d_enable <= '0';
 				timeEnable1 <= '0';
-				s_valueExtra <= timeExtra;
+				--s_valueExtra <= timeExtra;
 				s_extra <= '0';
 				IF (start_stop = '1') THEN
 					IF (s_valueExtra /= "00000000") THEN
-						s_temp <= '1';
+						--s_temp <= '1';
 						s_nextState <= TCozer;
 					ELSE
 						s_nextState <= TInit;
 						newPrg <= '1';
 					END IF;
 				ELSE
-					s_temp <= '0';
+					--s_temp <= '0';
 					s_nextState <= TExtra;
 				END IF;
 				

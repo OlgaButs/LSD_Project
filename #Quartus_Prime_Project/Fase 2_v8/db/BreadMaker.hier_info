@@ -600,10 +600,11 @@ start_stop => timeEnable1.DATAA
 start_stop => s_nextState.OUTPUTSELECT
 start_stop => s_nextState.OUTPUTSELECT
 start_stop => Selector11.IN3
-start_stop => s_temp.IN1
+start_stop => Selector17.IN2
 start_stop => Selector10.IN1
 start_stop => Selector15.IN1
 start_stop => s_mensagens.DATAA
+start_stop => s_temp.IN1
 timeExtra[0] => s_valueExtra[0].DATAIN
 timeExtra[1] => s_valueExtra[1].DATAIN
 timeExtra[2] => s_valueExtra[2].DATAIN
@@ -1769,10 +1770,10 @@ outBCD[0] <= outBCD.DB_MAX_OUTPUT_PORT_TYPE
 outBCD[1] <= outBCD.DB_MAX_OUTPUT_PORT_TYPE
 outBCD[2] <= outBCD.DB_MAX_OUTPUT_PORT_TYPE
 outBCD[3] <= outBCD.DB_MAX_OUTPUT_PORT_TYPE
-outBCD2[0] <= outBCD2.DB_MAX_OUTPUT_PORT_TYPE
-outBCD2[1] <= outBCD2.DB_MAX_OUTPUT_PORT_TYPE
-outBCD2[2] <= outBCD2.DB_MAX_OUTPUT_PORT_TYPE
-outBCD2[3] <= <GND>
+outBCD_2[0] <= outBCD_2.DB_MAX_OUTPUT_PORT_TYPE
+outBCD_2[1] <= outBCD_2.DB_MAX_OUTPUT_PORT_TYPE
+outBCD_2[2] <= outBCD_2.DB_MAX_OUTPUT_PORT_TYPE
+outBCD_2[3] <= <GND>
 
 
 |BreadMaker|Bin7SegDecoder:inst16
@@ -2365,10 +2366,10 @@ outBCD[0] <= outBCD.DB_MAX_OUTPUT_PORT_TYPE
 outBCD[1] <= outBCD.DB_MAX_OUTPUT_PORT_TYPE
 outBCD[2] <= outBCD.DB_MAX_OUTPUT_PORT_TYPE
 outBCD[3] <= outBCD.DB_MAX_OUTPUT_PORT_TYPE
-outBCD2[0] <= outBCD2.DB_MAX_OUTPUT_PORT_TYPE
-outBCD2[1] <= outBCD2.DB_MAX_OUTPUT_PORT_TYPE
-outBCD2[2] <= outBCD2.DB_MAX_OUTPUT_PORT_TYPE
-outBCD2[3] <= <GND>
+outBCD_2[0] <= outBCD_2.DB_MAX_OUTPUT_PORT_TYPE
+outBCD_2[1] <= outBCD_2.DB_MAX_OUTPUT_PORT_TYPE
+outBCD_2[2] <= outBCD_2.DB_MAX_OUTPUT_PORT_TYPE
+outBCD_2[3] <= <GND>
 
 
 |BreadMaker|Bin7SegDecoder:inst15

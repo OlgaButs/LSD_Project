@@ -195,6 +195,7 @@ BEGIN
 						newPrg <= '1';
 					END IF;
 				ELSE
+					s_temp <= '0';
 					s_nextState <= TExtra;
 				END IF;
 				

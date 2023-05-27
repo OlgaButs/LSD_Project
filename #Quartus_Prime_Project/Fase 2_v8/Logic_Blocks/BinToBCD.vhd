@@ -8,7 +8,7 @@ ENTITY BinToBCD IS
 	PORT (
 		inBin : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 		outBCD : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
-		outBCD2 : OUT STD_LOGIC_VECTOR (3 DOWNTO 0)
+		outBCD_2 : OUT STD_LOGIC_VECTOR (3 DOWNTO 0)
 	);
 END BinToBCD;
 
@@ -22,9 +22,9 @@ BEGIN
 	BEGIN
 		IF n < 10 THEN
 			outBCD <= inBin(3 DOWNTO 0);
-			outBCD2 <= "0000";
+			outBCD_2 <= "0000";
 		ELSIF n < 20 THEN
-			outBCD2 <= "0001";
+			outBCD_2 <= "0001";
 			CASE n IS
 				WHEN 10 => outBCD <= "0000";
 				WHEN 11 => outBCD <= "0001";
@@ -38,7 +38,7 @@ BEGIN
 				WHEN OTHERS => outBCD <= "1001";
 			END CASE;
 		ELSIF n < 30 THEN
-			outBCD2 <= "0010";
+			outBCD_2 <= "0010";
 			CASE n IS
 				WHEN 20 => outBCD <= "0000";
 				WHEN 21 => outBCD <= "0001";
@@ -52,7 +52,7 @@ BEGIN
 				WHEN OTHERS => outBCD <= "1001";
 			END CASE;
 		ELSIF n < 40 THEN
-			outBCD2 <= "0011";
+			outBCD_2 <= "0011";
 			CASE n IS
 				WHEN 30 => outBCD <= "0000";
 				WHEN 31 => outBCD <= "0001";
@@ -66,7 +66,7 @@ BEGIN
 				WHEN OTHERS => outBCD <= "1001";
 			END CASE;
 		ELSIF n < 50 THEN
-			outBCD2 <= "0100";
+			outBCD_2 <= "0100";
 			CASE n IS
 				WHEN 40 => outBCD <= "0000";
 				WHEN 41 => outBCD <= "0001";
@@ -80,7 +80,7 @@ BEGIN
 				WHEN OTHERS => outBCD <= "1001";
 			END CASE;
 		ELSIF n < 60 THEN
-			outBCD2 <= "0101";
+			outBCD_2 <= "0101";
 			CASE n IS
 				WHEN 50 => outBCD <= "0000";
 				WHEN 51 => outBCD <= "0001";
@@ -94,7 +94,7 @@ BEGIN
 				WHEN OTHERS => outBCD <= "1001";
 			END CASE;
 		ELSE
-			outBCD2 <= "0110";
+			outBCD_2 <= "0110";
 			outBCD <= "0000";
 		END IF;
 	END PROCESS;

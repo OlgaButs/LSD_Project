@@ -5,8 +5,10 @@ USE ieee.numeric_std.ALL;
 
 -- Interface:
 ENTITY TimerN IS
-	GENERIC (N : POSITIVE := 5);
-	PORT (
+	GENERIC
+		(N : POSITIVE := 30);
+	PORT
+	(
 		clk : IN STD_LOGIC;
 		reset : IN STD_LOGIC;
 		enable : IN STD_LOGIC;
@@ -19,10 +21,8 @@ END TimerN;
 
 -- Architecture:
 ARCHITECTURE Behavioral OF TimerN IS
-
 	SIGNAL s_result : STD_LOGIC;
 	SIGNAL s_count : INTEGER := 0;
-	
 BEGIN
 	ASSERT(N >= 2);
 
@@ -32,19 +32,19 @@ BEGIN
 			IF (reset = '1') THEN
 				s_result <= '0';
 				s_count <= N;
-				ELSIF (enable = '1') THEN
+			ELSIF (enable = '1') THEN
 				IF (s_count = 0) THEN
 					IF (start = '1') THEN
-						s_count <= s_count + 1;
+						s_count <= N - 1;
 					END IF;
 					s_result <= '0';
-					ELSE
-					IF (s_count = (N - 1)) THEN
+				ELSE
+					IF (s_count = 1) THEN
 						s_result <= '1';
 						s_count <= 0;
-						ELSE
+					ELSE
 						s_result <= '0';
-						s_count <= s_count + 1;
+						s_count <= s_count - 1;
 					END IF;
 				END IF;
 			END IF;
@@ -53,7 +53,4 @@ BEGIN
 
 	timerOut <= s_result;
 	cnt <= STD_LOGIC_VECTOR(to_unsigned(s_count, 8));
-	
 END Behavioral;
-
--- NOTA: Bloco Lógico Standard Retirado das Aulas de LSD.

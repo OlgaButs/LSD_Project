@@ -38,7 +38,8 @@ ENTITY DE2_LCD_DISPLAY IS
 			LCD_CHAR_ARRAY_0   : IN     STD_LOGIC;
 			LCD_CHAR_ARRAY_1   : IN     STD_LOGIC;
 			LCD_CHAR_ARRAY_2   : IN     STD_LOGIC;
-			LCD_CHAR_ARRAY_3   : IN     STD_LOGIC);
+			LCD_CHAR_ARRAY_3   : IN     STD_LOGIC;
+			LCD_CHAR_ARRAY_4   : IN     STD_LOGIC);
 END DE2_LCD_DISPLAY ;
 
 
@@ -59,15 +60,16 @@ ARCHITECTURE DE2_LCD_DISPLAY_arch OF DE2_LCD_DISPLAY IS
 	signal lcd_display_string_1001     : character_string;
 	signal lcd_display_string_1010     : character_string;
 	signal lcd_display_string_1011     : character_string;
-	signal lcd_display_string_0110     : character_string;
+	signal lcd_display_string_0100     : character_string;
 	signal lcd_display_string_1111     : character_string;
+	signal lcd_display_string_11111    : character_string;
 	signal lcd_display_string_OTHERS   : character_string;
 	signal data_bus_value, next_char   : STD_LOGIC_VECTOR(7 downto 0);
 	signal clk_count_400hz             : STD_LOGIC_VECTOR(19 downto 0);
 	signal char_count                  : STD_LOGIC_VECTOR(4 downto 0);
 	signal clk_400hz_enable,lcd_rw_int : std_logic;
 	signal data_bus                    : STD_LOGIC_VECTOR(7 downto 0);	
-	signal LCD_CHAR_ARRAY              : STD_LOGIC_VECTOR(3 DOWNTO 0);
+	signal LCD_CHAR_ARRAY              : STD_LOGIC_VECTOR(4 DOWNTO 0);
 	--SIGNAL SIG_ENABLE_count            : STD_LOGIC_VECTOR(19 DOWNTO 0) := "00000000000000000000";  
 	--SIGNAL LCD_ENABLE_SET              : std_logic;
 	--SIGNAL LCD_ENABLE_RESET            : std_logic;
@@ -89,6 +91,7 @@ BEGIN
 	LCD_CHAR_ARRAY(1) <= LCD_CHAR_ARRAY_1;
 	LCD_CHAR_ARRAY(2) <= LCD_CHAR_ARRAY_2;
 	LCD_CHAR_ARRAY(3) <= LCD_CHAR_ARRAY_3;
+	LCD_CHAR_ARRAY(4) <= LCD_CHAR_ARRAY_4;
 
 -- ASCII hex values for LCD Display
 -- Enter Live Hex Data Values from hardware here
@@ -139,7 +142,7 @@ BEGIN
  lcd_display_string_0011 <= 
   (
 -- Line 1: "A Cozer"
-          x"20",x"20",x"20",x"41",x"20",x"4C",x"65",x"76",x"65",x"64",x"61",x"72",x"20",x"20",x"20",x"20",
+          x"20",x"20",x"20",x"20",x"41",x"20",x"43",x"6F",x"7A",x"65",x"72",x"20",x"20",x"20",x"20",x"20",
    
 -- Line 2: "(10s)"
           x"20",x"20",x"20",x"20",x"20",x"28",x"31",x"30",x"73",x"29",x"20",x"20",x"20",x"20",x"20",x"20"
@@ -183,7 +186,7 @@ BEGIN
  lcd_display_string_1011 <= 
   (
 -- Line 1: "A Cozer"
-          x"20",x"20",x"20",x"41",x"20",x"4C",x"65",x"76",x"65",x"64",x"61",x"72",x"20",x"20",x"20",x"20",
+          x"20",x"20",x"20",x"20",x"41",x"20",x"43",x"6F",x"7A",x"65",x"72",x"20",x"20",x"20",x"20",x"20",
    
 -- Line 2: "(10s)"
           x"20",x"20",x"20",x"20",x"20",x"28",x"31",x"30",x"73",x"29",x"20",x"20",x"20",x"20",x"20",x"20"
@@ -191,7 +194,7 @@ BEGIN
 	
 --========================================================================================================================================================================================== 
 
- lcd_display_string_0110 <=
+ lcd_display_string_0100 <=
   (
 -- Line 1: "A Terminar"
           x"20",x"20",x"20",x"41",x"20",x"54",x"65",x"72",x"6D",x"69",x"6E",x"61",x"72",x"20",x"20",x"20",
@@ -204,11 +207,22 @@ BEGIN
 
  lcd_display_string_1111 <= 
   (
--- Line 1: "Tempo Extra:"
-          x"20",x"20",x"20",x"41",x"20",x"4C",x"65",x"76",x"65",x"64",x"61",x"72",x"20",x"20",x"20",x"20",
+-- Line 1: "Tempo Extra"
+          x"20",x"20",x"54",x"65",x"6D",x"70",x"6F",x"20",x"45",x"78",x"74",x"72",x"61",x"20",x"20",x"20",
    
--- Line 2: "( Usar KEY[2] )"
-          x"28",x"20",x"55",x"73",x"61",x"72",x"20",x"4B",x"45",x"59",x"5B",x"32",x"5D",x"20",x"29",x"20"
+-- Line 2: "( Usar KEY[3] )"
+          x"28",x"20",x"55",x"73",x"61",x"72",x"20",x"4B",x"45",x"59",x"5B",x"33",x"5D",x"20",x"29",x"20"
+   );
+	
+--========================================================================================================================================================================================== 
+
+ lcd_display_string_11111 <= 
+  (
+-- Line 1: "A Cozer"
+          x"20",x"20",x"20",x"20",x"41",x"20",x"43",x"6F",x"7A",x"65",x"72",x"20",x"20",x"20",x"20",x"20",
+   
+-- Line 2: "( Tempo Extra )"
+          x"28",x"20",x"54",x"65",x"6D",x"70",x"6F",x"20",x"45",x"78",x"74",x"72",x"61",x"20",x"29",x"20"
    );
 	
 --========================================================================================================================================================================================== 
@@ -234,7 +248,18 @@ BEGIN
 
 ------------------------------------ STATE MACHINE FOR LCD SCREEN MESSAGE SELECT -----------------------------
 ---------------------------------------------------------------------------------------------------------------
-PROCESS (LCD_CHAR_ARRAY)
+PROCESS (LCD_CHAR_ARRAY,lcd_display_string_0000,  
+								lcd_display_string_0001,  
+								lcd_display_string_0010,  
+								lcd_display_string_0011,  
+								lcd_display_string_1000,  
+								lcd_display_string_1001,  
+								lcd_display_string_1010,  
+								lcd_display_string_1011,  
+								lcd_display_string_0100,  
+								lcd_display_string_1111,  
+								lcd_display_string_11111, 
+								lcd_display_string_OTHERS, char_count)
 BEGIN
   
 -- get next character in display string based on the LCD_CHAR_ARRAY (switches or Multiplexer)
@@ -242,45 +267,65 @@ BEGIN
      CASE (LCD_CHAR_ARRAY) IS
           
 				-- MENU DO CASEIRO
-       WHEN "0000" =>
+       WHEN "00000" =>
             next_char <= lcd_display_string_0000(CONV_INTEGER(char_count));
 				
 				-- MENU DO RUSTICO                                                         
-       WHEN "1000" =>      
+       WHEN "01000" =>      
             next_char <= lcd_display_string_1000(CONV_INTEGER(char_count));  
                                                                           
 				-- AMASSAR DO CASEIRO                                                                                         
-       WHEN "0001" =>      
+       WHEN "00001" =>      
             next_char <= lcd_display_string_0001(CONV_INTEGER(char_count));
             
             -- LEVEDAR DO CASEIRO
-       WHEN "0010" =>      
+       WHEN "00010" =>      
             next_char <= lcd_display_string_0010(CONV_INTEGER(char_count));            
             
             -- COZER DO CASEIRO                                                          
-       WHEN "0011" =>      
+       WHEN "00011" =>      
             next_char <= lcd_display_string_0011(CONV_INTEGER(char_count));
                                                                           
 				-- AMASSAR DO RUSTICO                                                                                         
-       WHEN "1001" =>      
+       WHEN "01001" =>      
             next_char <= lcd_display_string_1001(CONV_INTEGER(char_count));
             
             -- LEVEDAR DO RUSTICO
-       WHEN "1010" =>      
+       WHEN "01010" =>      
             next_char <= lcd_display_string_1010(CONV_INTEGER(char_count));            
             
             -- COZER DO RUSTICO                                                          
-       WHEN "1011" =>      
+       WHEN "01011" =>      
             next_char <= lcd_display_string_1011(CONV_INTEGER(char_count));
 				
 				-- A TERMINAR                                                          
-       WHEN ("0100" OR "1100") =>      
-            next_char <= lcd_display_string_0110(CONV_INTEGER(char_count));
+       WHEN "00100" =>      
+            next_char <= lcd_display_string_0100(CONV_INTEGER(char_count));
+		 WHEN "01100" =>      
+            next_char <= lcd_display_string_0100(CONV_INTEGER(char_count));
+		 WHEN "10100" =>      
+            next_char <= lcd_display_string_0100(CONV_INTEGER(char_count));
+		 WHEN "11100" =>      
+            next_char <= lcd_display_string_0100(CONV_INTEGER(char_count));
+				
 				
 				-- TEMPO EXTRA                                                          
-       WHEN ("0101" OR "1101") =>      
+       WHEN "00101" =>      
             next_char <= lcd_display_string_1111(CONV_INTEGER(char_count));
-                                                                                                                              
+       WHEN "01101" =>      
+            next_char <= lcd_display_string_1111(CONV_INTEGER(char_count));
+		 WHEN "10101" =>      
+            next_char <= lcd_display_string_1111(CONV_INTEGER(char_count));
+       WHEN "11101" =>      
+            next_char <= lcd_display_string_1111(CONV_INTEGER(char_count));
+				
+				
+				-- A COZER EM TEMPO EXTRA
+		 WHEN "10011" =>      
+            next_char <= lcd_display_string_11111(CONV_INTEGER(char_count));
+		 WHEN "11011" =>      
+            next_char <= lcd_display_string_11111(CONV_INTEGER(char_count));
+				
 			  --  WHEN OTHERS                                                                 
 		WHEN OTHERS =>              
 			next_char <= lcd_display_string_OTHERS(CONV_INTEGER(char_count));

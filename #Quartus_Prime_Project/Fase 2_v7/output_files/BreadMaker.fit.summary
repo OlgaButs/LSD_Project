@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sat May 27 12:01:12 2023
+Fitter Status : Successful - Sat May 27 12:42:38 2023
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : BreadMaker
 Top-level Entity Name : BreadMaker
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 826 / 114,480 ( < 1 % )
-    Total combinational functions : 824 / 114,480 ( < 1 % )
+Total logic elements : 875 / 114,480 ( < 1 % )
+    Total combinational functions : 871 / 114,480 ( < 1 % )
     Dedicated logic registers : 263 / 114,480 ( < 1 % )
 Total registers : 263
 Total pins : 97 / 529 ( 18 % )

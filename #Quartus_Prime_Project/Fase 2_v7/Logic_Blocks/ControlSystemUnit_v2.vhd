@@ -88,6 +88,8 @@ BEGIN
 			WHEN Timer =>
 				IF (((start = '1') AND NOT((freeze = '1')))) THEN
 					fState <= TimeProcess;
+				ELSIF (freeze = '1') THEN
+					fState <= Menu;		
 				ELSE
 					fState <= Timer;
 				END IF;

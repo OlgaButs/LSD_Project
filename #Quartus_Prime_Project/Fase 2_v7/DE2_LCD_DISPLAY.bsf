@@ -67,6 +67,13 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 0 112)(pt 16 112)(line_width 1))
 	)
 	(port
+		(pt 0 128)
+		(input)
+		(text "LCD_CHAR_ARRAY_4" (rect 0 0 114 12)(font "Arial" ))
+		(text "LCD_CHAR_ARRAY_4" (rect 21 123 135 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
 		(pt 264 32)
 		(output)
 		(text "lcd_rs" (rect 0 0 24 12)(font "Arial" ))

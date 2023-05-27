@@ -1,0 +1,209 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -7.149
+TNS   : -1064.508
+
+Type  : Slow 1200mV 85C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TExtra'
+Slack : -3.374
+TNS   : -25.950
+
+Type  : Slow 1200mV 85C Model Setup 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : -1.093
+TNS   : -1.093
+
+Type  : Slow 1200mV 85C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TAmassar'
+Slack : 0.210
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.210
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TExtra'
+Slack : 0.360
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TAmassar'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'CLOCK_50'
+Slack : -1.653
+TNS   : -50.033
+
+Type  : Slow 1200mV 85C Model Removal 'CLOCK_50'
+Slack : 1.474
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -337.100
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TAmassar'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TExtra'
+Slack : 0.457
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -6.497
+TNS   : -956.020
+
+Type  : Slow 1200mV 0C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TExtra'
+Slack : -3.041
+TNS   : -23.396
+
+Type  : Slow 1200mV 0C Model Setup 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : -1.048
+TNS   : -1.048
+
+Type  : Slow 1200mV 0C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TAmassar'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TExtra'
+Slack : 0.322
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.365
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TAmassar'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'CLOCK_50'
+Slack : -1.390
+TNS   : -41.869
+
+Type  : Slow 1200mV 0C Model Removal 'CLOCK_50'
+Slack : 1.428
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -337.100
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TAmassar'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TExtra'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -3.049
+TNS   : -396.629
+
+Type  : Fast 1200mV 0C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TExtra'
+Slack : -1.496
+TNS   : -11.061
+
+Type  : Fast 1200mV 0C Model Setup 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : -0.195
+TNS   : -0.195
+
+Type  : Fast 1200mV 0C Model Setup 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.624
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'BreadBakerFSM:iaaanst1|s_currentState.TAmassar'
+Slack : 0.626
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.074
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : 0.206
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TAmassar'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'BreadBakerFSM:iaaanst1|s_currentState.TExtra'
+Slack : 0.274
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'CLOCK_50'
+Slack : -0.736
+TNS   : -21.862
+
+Type  : Fast 1200mV 0C Model Removal 'CLOCK_50'
+Slack : 0.525
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -278.814
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TAmassar'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.Init'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ControlSystemUnit_v2:inst25|pState.StartPrg'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BreadBakerFSM:iaaanst1|s_currentState.TExtra'
+Slack : 0.368
+TNS   : 0.000
+
+------------------------------------------------------------

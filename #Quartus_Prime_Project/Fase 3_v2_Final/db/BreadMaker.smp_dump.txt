@@ -1,0 +1,9 @@
+
+State Machine - |BreadBakerFSM|s_currentState
+Name s_currentState.TExtra s_currentState.TFim s_currentState.TCozer s_currentState.TLevedar s_currentState.TAmassar s_currentState.TInit 
+s_currentState.TInit 0 0 0 0 0 0 
+s_currentState.TAmassar 0 0 0 0 1 1 
+s_currentState.TLevedar 0 0 0 1 0 1 
+s_currentState.TCozer 0 0 1 0 0 1 
+s_currentState.TFim 0 1 0 0 0 1 
+s_currentState.TExtra 1 0 0 0 0 1 

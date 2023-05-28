@@ -1,0 +1,80 @@
+# Reading pref.tcl
+# do BreadMaker_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/Olga/Documents/LSD/Projeto/Fase 2_v9/Logic_Blocks/BreadBakerFSM.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:45:18 on May 28,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/Olga/Documents/LSD/Projeto/Fase 2_v9/Logic_Blocks/BreadBakerFSM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BreadBakerFSM
+# -- Compiling architecture Behavioral of BreadBakerFSM
+# End time: 12:45:18 on May 28,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work {C:/Users/Olga/Documents/LSD/Projeto/Fase 2_v9/Logic_Blocks/BreadBakerFSM_TB.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:48:38 on May 28,2023
+# vcom -reportprogress 300 -work work C:/Users/Olga/Documents/LSD/Projeto/Fase 2_v9/Logic_Blocks/BreadBakerFSM_TB.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BreadBakerFSM_TB
+# -- Compiling architecture Stimulus of BreadBakerFSM_TB
+# -- Loading entity BreadBakerFSM
+# End time: 12:48:38 on May 28,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {C:/Users/Olga/Documents/LSD/Projeto/Fase 2_v9/Logic_Blocks/BreadBakerFSM_TB.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:48:40 on May 28,2023
+# vcom -reportprogress 300 -work work C:/Users/Olga/Documents/LSD/Projeto/Fase 2_v9/Logic_Blocks/BreadBakerFSM_TB.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BreadBakerFSM_TB
+# -- Compiling architecture Stimulus of BreadBakerFSM_TB
+# -- Loading entity BreadBakerFSM
+# End time: 12:48:40 on May 28,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.breadbakerfsm_tb(stimulus)
+# vsim work.breadbakerfsm_tb(stimulus) 
+# Start time: 12:49:01 on May 28,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.breadbakerfsm_tb(stimulus)
+# Loading work.breadbakerfsm(behavioral)
+add wave -position end  sim:/breadbakerfsm_tb/s_addr
+add wave -position end  sim:/breadbakerfsm_tb/s_clk
+add wave -position end  sim:/breadbakerfsm_tb/s_d_enable
+add wave -position end  sim:/breadbakerfsm_tb/s_DataTime
+add wave -position end  sim:/breadbakerfsm_tb/s_extra
+add wave -position end  sim:/breadbakerfsm_tb/s_extraSelect
+add wave -position end  sim:/breadbakerfsm_tb/s_ledRed
+add wave -position end  sim:/breadbakerfsm_tb/s_mensagens
+add wave -position end  sim:/breadbakerfsm_tb/s_newPrg
+add wave -position end  sim:/breadbakerfsm_tb/s_newTime
+add wave -position end  sim:/breadbakerfsm_tb/s_p1_p2
+add wave -position end  sim:/breadbakerfsm_tb/s_reset
+add wave -position end  sim:/breadbakerfsm_tb/s_start_stop
+add wave -position end  sim:/breadbakerfsm_tb/s_stOut
+add wave -position end  sim:/breadbakerfsm_tb/s_timeExp
+add wave -position end  sim:/breadbakerfsm_tb/s_timeExtra
+add wave -position end  sim:/breadbakerfsm_tb/s_timeVal
+run
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# End time: 12:53:33 on May 28,2023, Elapsed time: 0:04:32
+# Errors: 0, Warnings: 0

@@ -1,0 +1,189 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "newTime",
+					"strict" : false
+				},
+				{
+					"name" : "timeVal[0]",
+					"strict" : false
+				},
+				{
+					"name" : "timeVal[1]",
+					"strict" : false
+				},
+				{
+					"name" : "timeVal[2]",
+					"strict" : false
+				},
+				{
+					"name" : "timeVal[3]",
+					"strict" : false
+				},
+				{
+					"name" : "timeVal[4]",
+					"strict" : false
+				},
+				{
+					"name" : "timeVal[5]",
+					"strict" : false
+				},
+				{
+					"name" : "timeVal[6]",
+					"strict" : false
+				},
+				{
+					"name" : "timeVal[7]",
+					"strict" : false
+				},
+				{
+					"name" : "stOut[0]",
+					"strict" : false
+				},
+				{
+					"name" : "stOut[1]",
+					"strict" : false
+				},
+				{
+					"name" : "stOut[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ledRed",
+					"strict" : false
+				},
+				{
+					"name" : "newPrg",
+					"strict" : false
+				},
+				{
+					"name" : "extra",
+					"strict" : false
+				},
+				{
+					"name" : "addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "timeEnable1",
+					"strict" : false
+				},
+				{
+					"name" : "InitLoad",
+					"strict" : false
+				},
+				{
+					"name" : "d_enable",
+					"strict" : false
+				},
+				{
+					"name" : "mensagens",
+					"strict" : false
+				},
+				{
+					"name" : "extraSelect",
+					"strict" : false
+				},
+				{
+					"name" : "DataTime[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DataTime[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DataTime[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DataTime[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DataTime[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DataTime[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DataTime[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DataTime[7]",
+					"strict" : false
+				},
+				{
+					"name" : "start_stop",
+					"strict" : false
+				},
+				{
+					"name" : "timeExp",
+					"strict" : false
+				},
+				{
+					"name" : "p1_p2",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "timeExtra[0]",
+					"strict" : false
+				},
+				{
+					"name" : "timeExtra[1]",
+					"strict" : false
+				},
+				{
+					"name" : "timeExtra[2]",
+					"strict" : false
+				},
+				{
+					"name" : "timeExtra[3]",
+					"strict" : false
+				},
+				{
+					"name" : "timeExtra[4]",
+					"strict" : false
+				},
+				{
+					"name" : "timeExtra[5]",
+					"strict" : false
+				},
+				{
+					"name" : "timeExtra[6]",
+					"strict" : false
+				},
+				{
+					"name" : "timeExtra[7]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

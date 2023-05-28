@@ -1,0 +1,181 @@
+\documentclass{report}
+\usepackage[T1]{fontenc} % Fontes T1
+\usepackage[utf8]{inputenc} % Input UTF8
+\usepackage[backend=biber, style=ieee]{biblatex} % para usar bibliografia
+\usepackage{csquotes}
+\usepackage[portuguese]{babel} %Usar língua portuguesa
+\usepackage{blindtext} % Gerar texto automaticamente
+\usepackage[printonlyused]{acronym}
+\usepackage{hyperref} % para autoref
+\usepackage{graphicx}
+\usepackage{indentfirst}
+
+\bibliography{bibliografia}
+
+
+\begin{document}
+%%
+% Definições
+%
+\def\titulo{Projeto Final de Laboratórios de Sistemas Digitais}
+\def\data{01 de Junho de 2023}
+\def\autores{Olha Buts, André Correia}
+\def\autorescontactos{(112920) o.buts@ua.pt, (87818) amcorreia@ua.pt}
+\def\versao{VERSÃO 0.1}
+\def\departamento{Dept. de Eletrónica, Telecomunicações e Informática}
+\def\empresa{Universidade de Aveiro}
+\def\logotipo{ua.pdf}
+%
+%%%%%% CAPA %%%%%%
+%
+\begin{titlepage}
+
+\begin{center}
+%
+\vspace*{50mm}
+%
+{\Huge \titulo}\\ 
+%
+\vspace{10mm}
+%
+{\Large \empresa}\\
+%
+\vspace{10mm}
+%
+{\LARGE \autores}\\ 
+%
+\vspace{30mm}
+%
+\begin{figure}[h]
+\center
+\includegraphics{\logotipo}
+\end{figure}
+%
+\vspace{30mm}
+\end{center}
+%
+\begin{flushright}
+\versao
+\end{flushright}
+\end{titlepage}
+
+%%  Página de Título %%
+\title{%
+{\Huge\textbf{\titulo}}\\
+{\Large \departamento\\ \empresa}
+}
+%
+\author{%
+    \autores \\
+    \autorescontactos
+}
+%
+\date{\today}
+%
+\maketitle
+
+\pagenumbering{roman}
+
+%%%%%% RESUMO %%%%%%
+\begin{abstract}
+popopopopopoqewp
+\end{abstract}
+
+%%%%%% Agradecimentos %%%%%%
+% Segundo glisc deveria aparecer após conclusão...
+%\renewcommand{\abstractname}{Agradecimentos}
+%\begin{abstract}
+%Eventuais agradecimentos.
+%Comentar bloco caso não existam agradecimentos a fazer.
+%\end{abstract}
+
+
+\tableofcontents
+% \listoftables     % descomentar se necessário
+% \listoffigures    % descomentar se necessário
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introdução}
+\label{chap.introducao}
+
+Os alunos da Unidade Curricular de \textbf{L}aboratórios de \textbf{S}istemas \textbf{D}igitais (\textit{LSD}, código 40333) da \textbf{L}icenciatura em \textbf{E}ngenharia de \textbf{C}omputadores e \textbf{I}nformática (\textit{LECI}, código 8316) da \textbf{U}niversidade de \textbf{A}veiro (\textit{UA}) foram propostos ao desenvolvimento de um Projeto Final que contempla três componentes: desenvolvimento do sistema digital de uma Máquina Automática de Fazer Pão (Projeto Número 8, Versão 2), criação de um relatório do desenvolvimento anteriormente referido, e a defesa do projeto perante um Juri.
+\\\\
+O sistema digital da Máquina Automática de Fazer Pão deve ser modelado em \textit{\textbf{V}ery High Speed Integrated Circuits \textbf{H}ardware \textbf{D}escription \textbf{L}anguage} (\textit{VHSIC-HDL}, ou \textit{VHDL}) e testado numa \textbf{F}ield-\textbf{P}rogrammable \textbf{G}ate \textbf{A}rray (\textit{FPGA}). Neste sentido, a máquina desenvolvida apresenta dois modos de operação principal: Fazer Pão Caseiro (Modo 1), ou Fazer Pão Rústico (Modo 2). Apesar de cada um destes modos ser caracterizado por diferentes parâmetros temporáis, ambos partilham a mesma \textit{pipeline}, ou procedimento de 'fazer pão'  (o amassar da massa, o descanso da massa para levedar, e a cozedura no final).
+\\\\
+Relativamente ao documento, este apresenta o relatório do desenvolvimento do sistema digital da Máquina Automática de Fazer Pão (Versão 2 do Projeto 8) de acordo com as competências adquiridas na Unidade Curricular de LSD.
+Neste sentido, o documento divide-se em quatro componentes, sendo estas a arquitetura do sistema digital (descrição conceptual do sistema), a implementação efetuada para a anterior arquitetura (representação gráfica do sistema digital), os métodos de validação usados (simulações efetuadas sobre a implementação da arquitetura), e por fim, um manual de utilizador da máquina como um todo (em ambiente de desenvolvimento através de uma FPGA).
+
+\chapter{Desenvolvimento do Sistema Digital}
+\label{chap.metodologia}
+Descreve os métodos utilizados para obtenção de resultados.
+
+Neste esqueleto de relatório aproveitamos este capítulo para exemplificar
+como se usam alguns elementos de {\LaTeX}.
+
+\section{Arquitetura do Sistema}
+
+\subsection{Utilização de acrónimos}
+Esta é a primeira invocação do acrónimo \ac{ua}.
+E esta é a segunda \ac{ua}.
+
+Outra referência à \ac{leci}.
+
+\subsection{Referências bibliográficas}
+Informação relativa à estrutura formal de um relatório pode ser obtida
+na página do \ac{glisc}\cite{glisc}.
+
+\section{Implementação do Sistema}
+
+\subsection{Utilização de acrónimos}
+Esta é a primeira invocação do acrónimo \ac{ua}.
+E esta é a segunda \ac{ua}.
+
+\section{Validação do Sistema}
+
+\subsection{Utilização de acrónimos}
+Esta é a primeira invocação do acrónimo \ac{ua}.
+E esta é a segunda \ac{ua}.
+
+\chapter{Manual de Utilizador}
+\label{chap.manualUtilizador}
+Descreve os resultados obtidos.
+
+\chapter{Conclusões}
+\label{chap.conclusao}
+A arquitetura da Máquina Automática de Fazer Pão e a posterior implementação através de Máquinas de Estados Finitos Comunicantes, e todo o \textit{datapath} envolvente, demonstrou atingir um nível de complexidade que necessita de procedimentos de desenvolvimento bem definidos desde o início do projeto.
+\\\\
+Deste modo, é de importância realçar a necessidade de estratégias de desenvolvimento faseadas e de mecanismos de controlo, tais como versões de projeto, assim como metodologia em todas as etapas do projeto.
+\\\\
+Contudo
+
+
+\chapter*{Contribuições dos autores}
+Resumir aqui o que cada autor fez no trabalho.
+Usar abreviaturas para identificar os autores,
+por exemplo AS para António Silva.
+
+\vspace{10pt}
+\textbf{Indicar a percentagem de contribuição de cada autor.}\\
+
+\autores : 50\%, 50\%\\
+
+%\textbf{Repositório GitHub:} labi2023gN
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Acrónimos}
+\begin{acronym}
+\acro{ua}[UA]{Universidade de Aveiro}
+\acro{leci}[LECI]{Licenciatura em Engenharia de Computadores e Informática}
+\acro{glisc}[GLISC]{Grey Literature International Steering Committee}
+\end{acronym}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\printbibliography
+
+\end{document}

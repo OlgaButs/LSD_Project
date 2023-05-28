@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  28 MAY 2023 22:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  28 MAY 2023 23:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -573,7 +573,11 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'portuguese'.
- (./documento.aux)
+ (./documento.aux
+
+LaTeX Warning: Label `fig:imagem4' multiply defined.
+
+)
 \openout1 = `documento.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -596,8 +600,7 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 Package biblatex Info: Trying to load language 'portuguese'...
 Package biblatex Info: ... file 'portuguese.lbx' found.
-
-(c:/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/portuguese.lbx
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/portuguese.lbx
 File: portuguese.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -641,7 +644,7 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<ua.pdf, id=40, 52.195pt x 55.20625pt>
+<ua.pdf, id=32, 52.195pt x 55.20625pt>
 File: ua.pdf Graphic file (type pdf)
 <use ua.pdf>
 Package pdftex.def Info: ua.pdf  used on input line 54.
@@ -702,12 +705,12 @@ l.115 \chapter
 
 ]
 Cap\'{\i }tulo 2.
-<images/fase2v9_2.png, id=94, 1901.60437pt x 921.4425pt>
+<images/fase2v9_2.png, id=86, 1901.60437pt x 921.4425pt>
 File: images/fase2v9_2.png Graphic file (type png)
 <use images/fase2v9_2.png>
 Package pdftex.def Info: images/fase2v9_2.png  used on input line 141.
 (pdftex.def)             Requested size: 335.0pt x 162.32341pt.
-<images/SistemaAbstrato_2.png, id=96, 1723.94063pt x 536.0025pt>
+<images/SistemaAbstrato_2.png, id=88, 1723.94063pt x 536.0025pt>
 File: images/SistemaAbstrato_2.png Graphic file (type png)
 <use images/SistemaAbstrato_2.png>
 Package pdftex.def Info: images/SistemaAbstrato_2.png  used on input line 149.
@@ -727,12 +730,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--153
 
 {c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 [3 <./images/fase2v9_2.png> <./images/SistemaAbstrato_2.png>]
-<images/FSM1_2.png, id=111, 1701.35625pt x 695.59875pt>
+<images/FSM1_2.png, id=103, 1701.35625pt x 695.59875pt>
 File: images/FSM1_2.png Graphic file (type png)
 <use images/FSM1_2.png>
 Package pdftex.def Info: images/FSM1_2.png  used on input line 160.
 (pdftex.def)             Requested size: 310.0pt x 126.7414pt.
-<images/FSM2_2.png, id=112, 1737.49126pt x 694.09312pt>
+<images/FSM2_2.png, id=104, 1737.49126pt x 694.09312pt>
 File: images/FSM2_2.png Graphic file (type png)
 <use images/FSM2_2.png>
 Package pdftex.def Info: images/FSM2_2.png  used on input line 168.
@@ -743,61 +746,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 155--172
  []
 
 [4 <./images/FSM1_2.png> <./images/FSM2_2.png>]
-Package acronym Info: Label `acro:ua' newly defined as it shall be overridden
-although it is yet undefined on input line 178.
-
-
-Package acronym Warning: Acronym `ua' is not defined on input line 178.
-
-
-Package acronym Warning: Acronym `ua' is not defined on input line 178.
-
-
-Package acronym Warning: Acronym `ua' is not defined on input line 179.
-
-[5]
+<images/FSM1_TB_2.png, id=111, 1425.07407pt x 204.01219pt>
+File: images/FSM1_TB_2.png Graphic file (type png)
+<use images/FSM1_TB_2.png>
+Package pdftex.def Info: images/FSM1_TB_2.png  used on input line 180.
+(pdftex.def)             Requested size: 335.0pt x 47.95844pt.
+ [5 <./images/FSM1_TB_2.png>]
 Cap\'{\i }tulo 3.
 [6
 
 ]
 Cap\'{\i }tulo 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--190
+Underfull \hbox (badness 10000) in paragraph at lines 191--194
 
  []
+
+
+LaTeX Warning: Empty bibliography on input line 211.
 
 [7
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
-
- []
-
-
-LaTeX Warning: Empty bibliography on input line 218.
-
-[8
 
 ] (./documento.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `documento.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `documento.out':
-(rerunfilecheck)             Before: 72AF3BAEB6E4FF3A2B74B2496B44D633;1470
-(rerunfilecheck)             After:  1AC8369B45A7ED5DA46EE4BEB6D6C79E;1279.
+Package rerunfilecheck Info: File `documento.out' has not changed.
+(rerunfilecheck)             Checksum: 041518C8B6297BF30923D0E701999D96;1088.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                documento
@@ -808,33 +786,28 @@ Package logreq Info: Writing requests to 'documento.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19543 strings out of 476025
- 346476 string characters out of 5794015
+ 19540 strings out of 476025
+ 346570 string characters out of 5794015
  1859382 words of memory out of 5000000
- 39737 multiletter control sequences out of 15000+600000
- 527104 words of font info for 58 fonts, out of 8000000 for 9000
+ 39738 multiletter control sequences out of 15000+600000
+ 526328 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,7n,68p,1051b,1662s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsection.2.2.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-<c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbi1000.pfb><c:/texliv
-e/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2023/tex
-mf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2023/texmf-dist/fo
-nts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2023/texmf-dist/fonts/type1/
-public/cm-super/sfbx2074.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-
-super/sfbx2488.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm
-0500.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><
-c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive
-/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><c:/texlive/2023/texm
-f-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2023/texmf-dist/fon
-ts/type1/public/cm-super/sfrm2488.pfb><c:/texlive/2023/texmf-dist/fonts/type1/p
-ublic/cm-super/sfti1000.pfb>
-Output written on documento.pdf (12 pages, 488749 bytes).
+<c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbi1000.pfb><c:/texl
+ive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2023/t
+exmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2023/texmf-dist/
+fonts/type1/public/cm-super/sfbx2074.pfb><c:/texlive/2023/texmf-dist/fonts/type
+1/public/cm-super/sfbx2488.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/c
+m-super/sfrm0500.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sf
+rm1000.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
+><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><c:/texli
+ve/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2023/te
+xmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb><c:/texlive/2023/texmf-dist/f
+onts/type1/public/cm-super/sfti1000.pfb>
+Output written on documento.pdf (11 pages, 496778 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 153 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 189 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 87 words of extra memory for PDF output out of 10000 (max. 10000000)
 

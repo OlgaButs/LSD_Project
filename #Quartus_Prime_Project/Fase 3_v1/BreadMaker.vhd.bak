@@ -1,0 +1,588 @@
+-- Copyright (C) 2020  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions 
+-- and other software and tools, and any partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Intel Program License 
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel FPGA IP License Agreement, or other applicable license
+-- agreement, including, without limitation, that your use is for
+-- the sole purpose of programming logic devices manufactured by
+-- Intel and sold by Intel or its authorized distributors.  Please
+-- refer to the applicable agreement for further details, at
+-- https://fpgasoftware.intel.com/eula.
+
+-- PROGRAM		"Quartus Prime"
+-- VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
+-- CREATED		"Sat May 27 19:41:45 2023"
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all; 
+
+LIBRARY work;
+
+ENTITY BreadMaker IS 
+	PORT
+	(
+		CLOCK_50 :  IN  STD_LOGIC;
+		KEY :  IN  STD_LOGIC_VECTOR(3 DOWNTO 0);
+		SW :  IN  STD_LOGIC_VECTOR(0 TO 0);
+		LCD_RS :  OUT  STD_LOGIC;
+		LCD_EN :  OUT  STD_LOGIC;
+		LCD_RW :  OUT  STD_LOGIC;
+		LCD_ON :  OUT  STD_LOGIC;
+		LCD_BLON :  OUT  STD_LOGIC;
+		HEX0 :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		HEX1 :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		HEX2 :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		HEX3 :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		HEX4 :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		HEX5 :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		HEX6 :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		HEX7 :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		LCD_DATA :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		LEDG :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		LEDR :  OUT  STD_LOGIC_VECTOR(14 DOWNTO 0)
+	);
+END BreadMaker;
+
+ARCHITECTURE bdf_type OF BreadMaker IS 
+
+COMPONENT breadbakerfsm
+	PORT(reset : IN STD_LOGIC;
+		 clk : IN STD_LOGIC;
+		 p1_p2 : IN STD_LOGIC;
+		 start_stop : IN STD_LOGIC;
+		 timeExp : IN STD_LOGIC;
+		 DataTime : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+		 timeExtra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+		 newTime : OUT STD_LOGIC;
+		 ledRed : OUT STD_LOGIC;
+		 newPrg : OUT STD_LOGIC;
+		 extra : OUT STD_LOGIC;
+		 timeEnable1 : OUT STD_LOGIC;
+		 InitLoad : OUT STD_LOGIC;
+		 d_enable : OUT STD_LOGIC;
+		 mensagens : OUT STD_LOGIC;
+		 debug1 : OUT STD_LOGIC;
+		 addr : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 debug2 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+		 stOut : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+		 timeVal : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT flipflopd
+	PORT(clk : IN STD_LOGIC;
+		 reset : IN STD_LOGIC;
+		 enable : IN STD_LOGIC;
+		 dataIn : IN STD_LOGIC;
+		 dataOut : OUT STD_LOGIC
+	);
+END COMPONENT;
+
+COMPONENT debouncer
+GENERIC (inPolarity : STD_LOGIC;
+			kHzClkFreq : INTEGER;
+			mSecMinInWidth : INTEGER;
+			outPolarity : STD_LOGIC
+			);
+	PORT(refClk : IN STD_LOGIC;
+		 dirtyIn : IN STD_LOGIC;
+		 pulsedOut : OUT STD_LOGIC
+	);
+END COMPONENT;
+
+COMPONENT pulsegenn
+GENERIC (N : INTEGER
+			);
+	PORT(clkIn : IN STD_LOGIC;
+		 reset : IN STD_LOGIC;
+		 pulse : OUT STD_LOGIC
+	);
+END COMPONENT;
+
+COMPONENT bin7segdecoder
+	PORT(enable : IN STD_LOGIC;
+		 binInput : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 decOut_n : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT mux2_1
+GENERIC (N : INTEGER
+			);
+	PORT(sel : IN STD_LOGIC;
+		 input0 : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 input1 : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 muxOut : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT mux3_1
+	PORT(dataIn1 : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 dataIn2 : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 dataIn3 : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 S : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+		 dataOut : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT bintobcd
+	PORT(inBin : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+		 outBCD : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 outBCD_2 : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT controlsystemunit_v2
+	PORT(reset : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 start : IN STD_LOGIC;
+		 freezeEnd : IN STD_LOGIC;
+		 extraEn : IN STD_LOGIC;
+		 newPrg : IN STD_LOGIC;
+		 freeze : IN STD_LOGIC;
+		 en_1 : OUT STD_LOGIC;
+		 en_2 : OUT STD_LOGIC;
+		 en_3 : OUT STD_LOGIC;
+		 start_stop : OUT STD_LOGIC;
+		 freezeStart : OUT STD_LOGIC;
+		 rstGlobal : OUT STD_LOGIC;
+		 stOut : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT rom_kxn_1p_v1
+GENERIC (K : INTEGER;
+			N : INTEGER
+			);
+	PORT(address : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 dataOut : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT rom_kxn_1p_v2
+GENERIC (K : INTEGER;
+			N : INTEGER
+			);
+	PORT(address : IN STD_LOGIC_VECTOR(0 TO 0);
+		 dataOut : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT de2_lcd_display
+GENERIC (num_hex_digits : INTEGER
+			);
+	PORT(reset : IN STD_LOGIC;
+		 clock_50 : IN STD_LOGIC;
+		 LCD_CHAR_ARRAY_0 : IN STD_LOGIC;
+		 LCD_CHAR_ARRAY_1 : IN STD_LOGIC;
+		 LCD_CHAR_ARRAY_2 : IN STD_LOGIC;
+		 LCD_CHAR_ARRAY_3 : IN STD_LOGIC;
+		 LCD_CHAR_ARRAY_4 : IN STD_LOGIC;
+		 data_bus_0 : INOUT STD_LOGIC;
+		 data_bus_1 : INOUT STD_LOGIC;
+		 data_bus_2 : INOUT STD_LOGIC;
+		 data_bus_3 : INOUT STD_LOGIC;
+		 data_bus_4 : INOUT STD_LOGIC;
+		 data_bus_5 : INOUT STD_LOGIC;
+		 data_bus_6 : INOUT STD_LOGIC;
+		 data_bus_7 : INOUT STD_LOGIC;
+		 lcd_rs : OUT STD_LOGIC;
+		 lcd_e : OUT STD_LOGIC;
+		 lcd_rw : OUT STD_LOGIC;
+		 lcd_on : OUT STD_LOGIC;
+		 lcd_blon : OUT STD_LOGIC
+	);
+END COMPONENT;
+
+COMPONENT debugger_inputsat50mhz
+	PORT(input : IN STD_LOGIC;
+		 output : OUT STD_LOGIC
+	);
+END COMPONENT;
+
+COMPONENT timeextra
+	PORT(clk : IN STD_LOGIC;
+		 data : IN STD_LOGIC;
+		 enable : IN STD_LOGIC;
+		 resetglb : IN STD_LOGIC;
+		 reset : IN STD_LOGIC;
+		 cnt : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT timern
+GENERIC (N : INTEGER
+			);
+	PORT(clk : IN STD_LOGIC;
+		 reset : IN STD_LOGIC;
+		 enable : IN STD_LOGIC;
+		 start : IN STD_LOGIC;
+		 timerOut : OUT STD_LOGIC;
+		 cnt : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT timerauxfsm
+GENERIC (N : INTEGER
+			);
+	PORT(clk : IN STD_LOGIC;
+		 enable : IN STD_LOGIC;
+		 load : IN STD_LOGIC;
+		 reset : IN STD_LOGIC;
+		 dataIn : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+		 timeExp : OUT STD_LOGIC;
+		 count : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
+END COMPONENT;
+
+SIGNAL	clk :  STD_LOGIC;
+SIGNAL	cnt :  STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL	dataOut :  STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL	globalReset :  STD_LOGIC;
+SIGNAL	S :  STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL	stOut :  STD_LOGIC_VECTOR(2 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_49 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_50 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_2 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_3 :  STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_4 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_5 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_51 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_52 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_8 :  STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_10 :  STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_11 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_12 :  STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_13 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_14 :  STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_15 :  STD_LOGIC_VECTOR(0 TO 3);
+SIGNAL	SYNTHESIZED_WIRE_16 :  STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_17 :  STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_18 :  STD_LOGIC_VECTOR(0 TO 3);
+SIGNAL	SYNTHESIZED_WIRE_19 :  STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_20 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_21 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_22 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_23 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_24 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_25 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_26 :  STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_27 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_28 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_30 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_53 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_54 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_37 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_39 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_55 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_41 :  STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_44 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_45 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_46 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_48 :  STD_LOGIC_VECTOR(7 DOWNTO 0);
+
+
+BEGIN 
+LEDR(1) <= SYNTHESIZED_WIRE_49;
+LEDR(4) <= SYNTHESIZED_WIRE_51;
+LEDR(14) <= SYNTHESIZED_WIRE_30;
+SYNTHESIZED_WIRE_13 <= '1';
+SYNTHESIZED_WIRE_15 <= "1111";
+SYNTHESIZED_WIRE_18 <= "1111";
+SYNTHESIZED_WIRE_53 <= '1';
+
+
+
+b2v_iaaanst1 : breadbakerfsm
+PORT MAP(reset => globalReset,
+		 clk => clk,
+		 p1_p2 => SYNTHESIZED_WIRE_49,
+		 start_stop => SYNTHESIZED_WIRE_50,
+		 timeExp => SYNTHESIZED_WIRE_2,
+		 DataTime => SYNTHESIZED_WIRE_3,
+		 timeExtra => cnt,
+		 newTime => SYNTHESIZED_WIRE_45,
+		 ledRed => LEDR(0),
+		 newPrg => SYNTHESIZED_WIRE_24,
+		 extra => SYNTHESIZED_WIRE_23,
+		 timeEnable1 => SYNTHESIZED_WIRE_5,
+		 InitLoad => SYNTHESIZED_WIRE_44,
+		 d_enable => SYNTHESIZED_WIRE_52,
+		 mensagens => SYNTHESIZED_WIRE_27,
+		 debug1 => SYNTHESIZED_WIRE_30,
+		 addr => SYNTHESIZED_WIRE_26,
+		 debug2 => LEDR(13 DOWNTO 6),
+		 stOut => stOut,
+		 timeVal => SYNTHESIZED_WIRE_48);
+
+
+b2v_inst : flipflopd
+PORT MAP(clk => clk,
+		 reset => globalReset,
+		 enable => SYNTHESIZED_WIRE_4,
+		 dataIn => SW(0),
+		 dataOut => SYNTHESIZED_WIRE_49);
+
+
+b2v_inst1 : debouncer
+GENERIC MAP(inPolarity => '0',
+			kHzClkFreq => 50000,
+			mSecMinInWidth => 100,
+			outPolarity => '1'
+			)
+PORT MAP(refClk => clk,
+		 dirtyIn => KEY(1),
+		 pulsedOut => SYNTHESIZED_WIRE_20);
+
+
+SYNTHESIZED_WIRE_46 <= SYNTHESIZED_WIRE_5 AND SYNTHESIZED_WIRE_51;
+
+
+b2v_inst11 : pulsegenn
+GENERIC MAP(N => 50000000
+			)
+PORT MAP(clkIn => clk,
+		 reset => globalReset,
+		 pulse => SYNTHESIZED_WIRE_51);
+
+
+b2v_inst12 : debouncer
+GENERIC MAP(inPolarity => '0',
+			kHzClkFreq => 50000,
+			mSecMinInWidth => 100,
+			outPolarity => '1'
+			)
+PORT MAP(refClk => clk,
+		 dirtyIn => KEY(3),
+		 pulsedOut => SYNTHESIZED_WIRE_37);
+
+
+b2v_inst13 : debouncer
+GENERIC MAP(inPolarity => '0',
+			kHzClkFreq => 50000,
+			mSecMinInWidth => 100,
+			outPolarity => '1'
+			)
+PORT MAP(refClk => clk,
+		 dirtyIn => KEY(2),
+		 pulsedOut => SYNTHESIZED_WIRE_25);
+
+
+b2v_inst14 : bin7segdecoder
+PORT MAP(enable => SYNTHESIZED_WIRE_52,
+		 binInput => SYNTHESIZED_WIRE_8,
+		 decOut_n => HEX6);
+
+
+b2v_inst15 : bin7segdecoder
+PORT MAP(enable => SYNTHESIZED_WIRE_52,
+		 binInput => SYNTHESIZED_WIRE_10,
+		 decOut_n => HEX7);
+
+
+b2v_inst16 : bin7segdecoder
+PORT MAP(enable => SYNTHESIZED_WIRE_11,
+		 binInput => SYNTHESIZED_WIRE_12,
+		 decOut_n => HEX5);
+
+
+b2v_inst17 : bin7segdecoder
+PORT MAP(enable => SYNTHESIZED_WIRE_13,
+		 binInput => SYNTHESIZED_WIRE_14,
+		 decOut_n => HEX4);
+
+
+b2v_inst18 : mux2_1
+GENERIC MAP(N => 4
+			)
+PORT MAP(sel => S(1),
+		 input0 => SYNTHESIZED_WIRE_15,
+		 input1 => SYNTHESIZED_WIRE_16,
+		 muxOut => SYNTHESIZED_WIRE_12);
+
+
+b2v_inst19 : mux3_1
+PORT MAP(dataIn1 => cnt(3 DOWNTO 0),
+		 dataIn2 => SYNTHESIZED_WIRE_17,
+		 dataIn3 => SYNTHESIZED_WIRE_18,
+		 S => S,
+		 dataOut => SYNTHESIZED_WIRE_14);
+
+
+SYNTHESIZED_WIRE_11 <= NOT(S(0));
+
+
+
+
+
+b2v_inst23 : bintobcd
+PORT MAP(inBin => SYNTHESIZED_WIRE_19,
+		 outBCD => SYNTHESIZED_WIRE_17,
+		 outBCD_2 => SYNTHESIZED_WIRE_16);
+
+
+
+b2v_inst25 : controlsystemunit_v2
+PORT MAP(reset => SYNTHESIZED_WIRE_20,
+		 clock => clk,
+		 start => SYNTHESIZED_WIRE_21,
+		 freezeEnd => SYNTHESIZED_WIRE_22,
+		 extraEn => SYNTHESIZED_WIRE_23,
+		 newPrg => SYNTHESIZED_WIRE_24,
+		 freeze => SYNTHESIZED_WIRE_25,
+		 en_1 => SYNTHESIZED_WIRE_4,
+		 en_2 => S(0),
+		 en_3 => S(1),
+		 start_stop => SYNTHESIZED_WIRE_50,
+		 freezeStart => SYNTHESIZED_WIRE_55,
+		 rstGlobal => globalReset,
+		 stOut => LEDG(6 DOWNTO 3));
+
+
+SYNTHESIZED_WIRE_28 <= NOT(globalReset);
+
+
+
+b2v_inst27 : rom_kxn_1p_v1
+GENERIC MAP(K => 4,
+			N => 8
+			)
+PORT MAP(address => SYNTHESIZED_WIRE_26,
+		 dataOut => SYNTHESIZED_WIRE_3);
+
+
+b2v_inst28 : rom_kxn_1p_v2
+GENERIC MAP(K => 1,
+			N => 16
+			)
+PORT MAP(address(0) => SYNTHESIZED_WIRE_27,
+		 dataOut => dataOut);
+
+
+b2v_inst29 : de2_lcd_display
+GENERIC MAP(num_hex_digits => 2
+			)
+PORT MAP(reset => SYNTHESIZED_WIRE_28,
+		 clock_50 => clk,
+		 LCD_CHAR_ARRAY_0 => stOut(0),
+		 LCD_CHAR_ARRAY_1 => stOut(1),
+		 LCD_CHAR_ARRAY_2 => stOut(2),
+		 LCD_CHAR_ARRAY_3 => SYNTHESIZED_WIRE_49,
+		 LCD_CHAR_ARRAY_4 => SYNTHESIZED_WIRE_30,
+		 data_bus_0 => LCD_DATA(0),
+		 data_bus_1 => LCD_DATA(1),
+		 data_bus_2 => LCD_DATA(2),
+		 data_bus_3 => LCD_DATA(3),
+		 data_bus_4 => LCD_DATA(4),
+		 data_bus_5 => LCD_DATA(5),
+		 data_bus_6 => LCD_DATA(6),
+		 data_bus_7 => LCD_DATA(7),
+		 lcd_rs => LCD_RS,
+		 lcd_e => LCD_EN,
+		 lcd_rw => LCD_RW,
+		 lcd_on => LCD_ON,
+		 lcd_blon => LCD_BLON);
+
+
+b2v_inst3 : debouncer
+GENERIC MAP(inPolarity => '0',
+			kHzClkFreq => 50000,
+			mSecMinInWidth => 100,
+			outPolarity => '1'
+			)
+PORT MAP(refClk => clk,
+		 dirtyIn => KEY(0),
+		 pulsedOut => SYNTHESIZED_WIRE_21);
+
+
+b2v_inst30 : bin7segdecoder
+PORT MAP(enable => SYNTHESIZED_WIRE_53,
+		 binInput => dataOut(3 DOWNTO 0),
+		 decOut_n => HEX0);
+
+
+b2v_inst31 : bin7segdecoder
+PORT MAP(enable => SYNTHESIZED_WIRE_53,
+		 binInput => dataOut(7 DOWNTO 4),
+		 decOut_n => HEX1);
+
+
+b2v_inst33 : bin7segdecoder
+PORT MAP(enable => SYNTHESIZED_WIRE_53,
+		 binInput => dataOut(11 DOWNTO 8),
+		 decOut_n => HEX2);
+
+
+b2v_inst34 : bin7segdecoder
+PORT MAP(enable => SYNTHESIZED_WIRE_53,
+		 binInput => dataOut(15 DOWNTO 12),
+		 decOut_n => HEX3);
+
+
+
+b2v_inst36 : debugger_inputsat50mhz
+PORT MAP(input => globalReset,
+		 output => LEDR(2));
+
+
+b2v_inst37 : debugger_inputsat50mhz
+PORT MAP(input => SYNTHESIZED_WIRE_50,
+		 output => LEDR(3));
+
+
+b2v_inst38 : debugger_inputsat50mhz
+PORT MAP(input => SYNTHESIZED_WIRE_54,
+		 output => LEDR(5));
+
+
+b2v_inst4 : timeextra
+PORT MAP(clk => clk,
+		 data => SYNTHESIZED_WIRE_37,
+		 enable => S(0),
+		 resetglb => globalReset,
+		 reset => SYNTHESIZED_WIRE_52,
+		 cnt => cnt);
+
+
+b2v_inst5 : timern
+GENERIC MAP(N => 30
+			)
+PORT MAP(clk => clk,
+		 reset => globalReset,
+		 enable => SYNTHESIZED_WIRE_39,
+		 start => SYNTHESIZED_WIRE_55,
+		 timerOut => SYNTHESIZED_WIRE_22,
+		 cnt => SYNTHESIZED_WIRE_19);
+
+
+b2v_inst6 : bintobcd
+PORT MAP(inBin => SYNTHESIZED_WIRE_41,
+		 outBCD => SYNTHESIZED_WIRE_8,
+		 outBCD_2 => SYNTHESIZED_WIRE_10);
+
+
+SYNTHESIZED_WIRE_39 <= SYNTHESIZED_WIRE_51 AND S(1) AND SYNTHESIZED_WIRE_55;
+
+
+SYNTHESIZED_WIRE_54 <= SYNTHESIZED_WIRE_44 OR SYNTHESIZED_WIRE_45;
+
+
+b2v_inst9 : timerauxfsm
+GENERIC MAP(N => 8
+			)
+PORT MAP(clk => clk,
+		 enable => SYNTHESIZED_WIRE_46,
+		 load => SYNTHESIZED_WIRE_54,
+		 reset => globalReset,
+		 dataIn => SYNTHESIZED_WIRE_48,
+		 timeExp => SYNTHESIZED_WIRE_2,
+		 count => SYNTHESIZED_WIRE_41);
+
+clk <= CLOCK_50;
+LEDG(2 DOWNTO 0) <= stOut(2 DOWNTO 0);
+
+END bdf_type;

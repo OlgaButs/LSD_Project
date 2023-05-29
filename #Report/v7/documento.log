@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  28 MAY 2023 23:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  29 MAY 2023 10:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -577,6 +577,12 @@ Package csquotes Info: Redefining alias 'default' -> 'portuguese'.
 
 LaTeX Warning: Label `fig:imagem4' multiply defined.
 
+
+LaTeX Warning: Label `fig:imagem4' multiply defined.
+
+
+LaTeX Warning: Label `fig:imagem4' multiply defined.
+
 )
 \openout1 = `documento.aux'.
 
@@ -705,12 +711,12 @@ l.115 \chapter
 
 ]
 Cap\'{\i }tulo 2.
-<images/fase2v9_2.png, id=86, 1901.60437pt x 921.4425pt>
+<images/fase2v9_2.png, id=90, 1901.60437pt x 921.4425pt>
 File: images/fase2v9_2.png Graphic file (type png)
 <use images/fase2v9_2.png>
 Package pdftex.def Info: images/fase2v9_2.png  used on input line 141.
 (pdftex.def)             Requested size: 335.0pt x 162.32341pt.
-<images/SistemaAbstrato_2.png, id=88, 1723.94063pt x 536.0025pt>
+<images/SistemaAbstrato_2.png, id=92, 1723.94063pt x 536.0025pt>
 File: images/SistemaAbstrato_2.png Graphic file (type png)
 <use images/SistemaAbstrato_2.png>
 Package pdftex.def Info: images/SistemaAbstrato_2.png  used on input line 149.
@@ -730,12 +736,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--153
 
 {c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 [3 <./images/fase2v9_2.png> <./images/SistemaAbstrato_2.png>]
-<images/FSM1_2.png, id=103, 1701.35625pt x 695.59875pt>
+<images/FSM1_2.png, id=107, 1701.35625pt x 695.59875pt>
 File: images/FSM1_2.png Graphic file (type png)
 <use images/FSM1_2.png>
 Package pdftex.def Info: images/FSM1_2.png  used on input line 160.
 (pdftex.def)             Requested size: 310.0pt x 126.7414pt.
-<images/FSM2_2.png, id=104, 1737.49126pt x 694.09312pt>
+<images/FSM2_2.png, id=108, 1737.49126pt x 694.09312pt>
 File: images/FSM2_2.png Graphic file (type png)
 <use images/FSM2_2.png>
 Package pdftex.def Info: images/FSM2_2.png  used on input line 168.
@@ -746,26 +752,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 155--172
  []
 
 [4 <./images/FSM1_2.png> <./images/FSM2_2.png>]
-<images/FSM1_TB_2.png, id=111, 1425.07407pt x 204.01219pt>
+<images/FSM1_TB_2.png, id=115, 1425.07407pt x 204.01219pt>
 File: images/FSM1_TB_2.png Graphic file (type png)
 <use images/FSM1_TB_2.png>
-Package pdftex.def Info: images/FSM1_TB_2.png  used on input line 180.
+Package pdftex.def Info: images/FSM1_TB_2.png  used on input line 179.
 (pdftex.def)             Requested size: 335.0pt x 47.95844pt.
- [5 <./images/FSM1_TB_2.png>]
+<images/FSM2_TB_3.png, id=116, 1425.07407pt x 249.93375pt>
+File: images/FSM2_TB_3.png Graphic file (type png)
+<use images/FSM2_TB_3.png>
+Package pdftex.def Info: images/FSM2_TB_3.png  used on input line 187.
+(pdftex.def)             Requested size: 335.0pt x 58.7535pt.
+File: images/FSM2_TB_3.png Graphic file (type png)
+<use images/FSM2_TB_3.png>
+Package pdftex.def Info: images/FSM2_TB_3.png  used on input line 195.
+(pdftex.def)             Requested size: 335.0pt x 58.7535pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--200
+
+ []
+
+[5 <./images/FSM1_TB_2.png> <./images/FSM2_TB_3.png>] [6]
 Cap\'{\i }tulo 3.
-[6
+[7
 
 ]
 Cap\'{\i }tulo 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--194
+Underfull \hbox (badness 10000) in paragraph at lines 209--212
 
  []
 
 
-LaTeX Warning: Empty bibliography on input line 211.
+LaTeX Warning: Empty bibliography on input line 229.
 
-[7
+[8
 
 ] (./documento.aux)
 
@@ -786,10 +806,10 @@ Package logreq Info: Writing requests to 'documento.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19540 strings out of 476025
- 346570 string characters out of 5794015
+ 19554 strings out of 476025
+ 346869 string characters out of 5794015
  1859382 words of memory out of 5000000
- 39738 multiletter control sequences out of 15000+600000
+ 39748 multiletter control sequences out of 15000+600000
  526328 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,7n,68p,1051b,1662s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -804,10 +824,10 @@ rm1000.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
 ve/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2023/te
 xmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb><c:/texlive/2023/texmf-dist/f
 onts/type1/public/cm-super/sfti1000.pfb>
-Output written on documento.pdf (11 pages, 496778 bytes).
+Output written on documento.pdf (12 pages, 534828 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 137 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 87 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 199 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 500000)
+ 92 words of extra memory for PDF output out of 10000 (max. 10000000)
 

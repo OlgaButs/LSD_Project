@@ -171,16 +171,34 @@ Relativamente à FSM Principal, apesar desta conter uma interface que alimenta a
 \end{figure}
 
 \section{Validação do Sistema}
-Esta última secção do Desenvolvimento do Sistema Digital (capítulo 2) tem como objetivo abordar os procedimentos implementados para validação do sistema -- com foco sobre as FSM -- tais como \textit{testbenches} desenhadas em VHDL, e a rotina de interação com a máquina na ótica do utilizador (num formato de desenvolvimento em FPGA) em cada nova versão da implementação.
+Esta última secção do Desenvolvimento do Sistema Digital (capítulo 2) tem como objetivo abordar os procedimentos implementados para validação do sistema -- com foco sobre a validação das FSM usando \textit{testbenches} desenhadas em VHDL. Contudo, também se aplicou uma rotina de interação com a máquina na ótica do utilizador (num formato de desenvolvimento em FPGA) em cada nova versão da implementação.
 \\
-Neste sentido, 
-
+Neste sentido, verifica-se na Figura 2.5 a correta transição de estados da FSM de Controlo quando aplicados diferentes valores nos seus inputs. É de se notar que esta FSM de Controlo tem como principais blocos lógicos \textit{standard} dois temporizadores (que são responsáveis pelo tempo extra no inicio, ou no final), assim como um sinal proveniente da FSM Principal (que indica se o ciclo da \textit{pipeline} terminou). Deste modo, a manipulação destes valores de acordo com comportamentos esperados -- e outros aleatórios (\textit{edge-cases} potencialmente problemáticos) -- permite validar o bloco lógico como corretamente funcional.
 \begin{figure}[h!] % Este [h!] força a imagem a aparecer onde é chamada.
 	\center
 	\includegraphics[width=335pt]{images/FSM1_TB_2}
-	\caption{Diagrama de Estados da FSM Principal.}
+	\caption{Testbench da FSM de Controlo.}
 	\label{fig:imagem4}
 \end{figure}
+\\
+Relativamente à FSM Principal, como se verifica na Figura 2.6, aplicando a mesma metodologia de manipulação das entradas, obtem-se o comportamento esperado (correto) do bloco lógico.
+\begin{figure}[h!] % Este [h!] força a imagem a aparecer onde é chamada.
+	\center
+	\includegraphics[width=335pt]{images/FSM2_TB_3}
+	\caption{Testbench da FSM Principal.}
+	\label{fig:imagem4}
+\end{figure}
+\\
+Por fim, indica-se a Figura 2.7 onde demonstra o teste efetuado ao sistema como um todo (\textit{Top-Level}). Nesta Figura, verifica-se o correto comportamento da Máquina Automática de Fazer Pão -- exatamente como analisado manualmente na FPGA.
+\begin{figure}[h!] % Este [h!] força a imagem a aparecer onde é chamada.
+	\center
+	\includegraphics[width=335pt]{images/FSM2_TB_3}
+	\caption{Testbench do Top-Level do Sistema.}
+	\label{fig:imagem4}
+\end{figure}
+\\
+
+
 
 \chapter{Manual de Utilizador}
 \label{chap.manualUtilizador}

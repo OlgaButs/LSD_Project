@@ -4,5 +4,5 @@
 \contentsline {section}{\numberline {2.1}Arquitetura do Sistema}{2}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Implementação do Sistema}{4}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Validação do Sistema}{5}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Manual de Utilizador}{6}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Conclusões}{7}{chapter.4}%
+\contentsline {chapter}{\numberline {3}Manual de Utilizador}{7}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Conclusões}{8}{chapter.4}%

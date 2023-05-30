@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  30 MAY 2023 11:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  30 MAY 2023 11:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -573,15 +573,278 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'portuguese'.
- (./documento.aux
+ (./documento.aux)
+\openout1 = `documento.aux'.
 
-LaTeX Warning: Label `fig:imagem5' multiply defined.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+Package biblatex Info: Trying to load language 'portuguese'...
+Package biblatex Info: ... file 'portuguese.lbx' found.
 
+(c:/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/portuguese.lbx
+File: portuguese.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 )
-Runaway argument?
-{\contentsline {chapter}{\numberline {3}Manu 
-! File ended while scanning use of \@writefile.
-<inserted text> 
-                \par 
-l.19 \begin{document}
-                     
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `documento.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'documento.bbl' not found.
+
+No file documento.bbl.
+Package biblatex Info: Reference section=0 on input line 19.
+Package biblatex Info: Reference segment=0 on input line 19.
+Package hyperref Info: Link coloring OFF on input line 19.
+(./documento.out) (./documento.out)
+\@outlinefile=\write4
+\openout4 = `documento.out'.
+
+
+(c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count433
+\scratchdimen=\dimen156
+\scratchbox=\box52
+\nofMPsegments=\count434
+\nofMParguments=\count435
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count436
+\MPscratchDim=\dimen157
+\MPnumerator=\count437
+\makeMPintoPDFobject=\count438
+\everyMPtoPDFconversion=\toks22
+) (c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(c:/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+<ua.pdf, id=32, 52.195pt x 55.20625pt>
+File: ua.pdf Graphic file (type pdf)
+<use ua.pdf>
+Package pdftex.def Info: ua.pdf  used on input line 54.
+(pdftex.def)             Requested size: 52.19487pt x 55.2061pt.
+ [1
+
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2023/
+texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./ua.pdf>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 79.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 79.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 79.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.79 
+      [1] (./documento.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 4.
+)
+\tf@toc=\write5
+\openout5 = `documento.toc'.
+
+ [1
+
+] (./documento.lof)
+\tf@lof=\write6
+\openout6 = `documento.lof'.
+
+ [2
+
+]
+Cap\'{\i }tulo 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--114
+
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.115 \chapter
+              {Desenvolvimento do Sistema Digital} [1
+
+
+]
+Cap\'{\i }tulo 2.
+<images/fase2v9_2.png, id=94, 1901.60437pt x 921.4425pt>
+File: images/fase2v9_2.png Graphic file (type png)
+<use images/fase2v9_2.png>
+Package pdftex.def Info: images/fase2v9_2.png  used on input line 141.
+(pdftex.def)             Requested size: 335.0pt x 162.32341pt.
+<images/SistemaAbstrato_2.png, id=96, 1723.94063pt x 536.0025pt>
+File: images/SistemaAbstrato_2.png Graphic file (type png)
+<use images/SistemaAbstrato_2.png>
+Package pdftex.def Info: images/SistemaAbstrato_2.png  used on input line 149.
+(pdftex.def)             Requested size: 250.0pt x 77.72246pt.
+
+Overfull \hbox (21.28166pt too wide) in paragraph at lines 136--153
+\T1/cmr/m/it/10 dard\T1/cmr/m/n/10 , as-sim como por con-tro-la-do-res cos-tu-m
+i-za-dos (as FSM). Es-tas FSM caracterizam-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--153
+
+ []
+
+[2
+
+{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[3 <./images/fase2v9_2.png> <./images/SistemaAbstrato_2.png>]
+<images/FSM1_2.png, id=111, 1701.35625pt x 695.59875pt>
+File: images/FSM1_2.png Graphic file (type png)
+<use images/FSM1_2.png>
+Package pdftex.def Info: images/FSM1_2.png  used on input line 160.
+(pdftex.def)             Requested size: 350.0pt x 143.09752pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 160--161
+ [] 
+ []
+
+<images/FSM1_Abstracao.png, id=112, 843.75224pt x 483.0045pt>
+File: images/FSM1_Abstracao.png Graphic file (type png)
+<use images/FSM1_Abstracao.png>
+Package pdftex.def Info: images/FSM1_Abstracao.png  used on input line 168.
+(pdftex.def)             Requested size: 250.0pt x 143.11154pt.
+<images/FSM2_2.png, id=113, 1737.49126pt x 694.09312pt>
+File: images/FSM2_2.png Graphic file (type png)
+<use images/FSM2_2.png>
+Package pdftex.def Info: images/FSM2_2.png  used on input line 176.
+(pdftex.def)             Requested size: 350.0pt x 139.8117pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 176--177
+ [] 
+ []
+
+<images/FSM2_Abstracao.png, id=114, 613.0905pt x 455.301pt>
+File: images/FSM2_Abstracao.png Graphic file (type png)
+<use images/FSM2_Abstracao.png>
+Package pdftex.def Info: images/FSM2_Abstracao.png  used on input line 184.
+(pdftex.def)             Requested size: 200.0pt x 148.52686pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--190
+
+ []
+
+[4 <./images/FSM1_2.png> <./images/FSM1_Abstracao.png>]
+<images/FSM1_TB_2.png, id=121, 1425.07407pt x 204.01219pt>
+File: images/FSM1_TB_2.png Graphic file (type png)
+<use images/FSM1_TB_2.png>
+Package pdftex.def Info: images/FSM1_TB_2.png  used on input line 197.
+(pdftex.def)             Requested size: 335.0pt x 47.95844pt.
+<images/FSM2_TB_3.png, id=122, 1425.07407pt x 249.93375pt>
+File: images/FSM2_TB_3.png Graphic file (type png)
+<use images/FSM2_TB_3.png>
+Package pdftex.def Info: images/FSM2_TB_3.png  used on input line 205.
+(pdftex.def)             Requested size: 335.0pt x 58.7535pt.
+<images/TopLevelTB_2.png, id=123, 1425.82687pt x 248.42813pt>
+File: images/TopLevelTB_2.png Graphic file (type png)
+<use images/TopLevelTB_2.png>
+Package pdftex.def Info: images/TopLevelTB_2.png  used on input line 213.
+(pdftex.def)             Requested size: 335.0pt x 58.36545pt.
+ [5 <./images/FSM2_2.png> <./images/FSM2_Abstracao.png>] [6 <./images/FSM1_TB_2
+.png> <./images/FSM2_TB_3.png> <./images/TopLevelTB_2.png>]
+Cap\'{\i }tulo 3.
+[7
+
+]
+Cap\'{\i }tulo 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--233
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--233
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--233
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--233
+
+ []
+
+
+LaTeX Warning: Empty bibliography on input line 253.
+
+[8
+
+] (./documento.aux)
+Package rerunfilecheck Info: File `documento.out' has not changed.
+(rerunfilecheck)             Checksum: 041518C8B6297BF30923D0E701999D96;1088.
+Package logreq Info: Writing requests to 'documento.run.xml'.
+\openout1 = `documento.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 19594 strings out of 476025
+ 347891 string characters out of 5794015
+ 1859382 words of memory out of 5000000
+ 39783 multiletter control sequences out of 15000+600000
+ 526328 words of font info for 57 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 63i,7n,68p,1051b,1662s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbi1000.pfb><c:/texl
+ive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2023/t
+exmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2023/texmf-dist/
+fonts/type1/public/cm-super/sfbx2074.pfb><c:/texlive/2023/texmf-dist/fonts/type
+1/public/cm-super/sfbx2488.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/c
+m-super/sfrm0500.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sf
+rm1000.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
+><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><c:/texli
+ve/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2023/te
+xmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb><c:/texlive/2023/texmf-dist/f
+onts/type1/public/cm-super/sfti1000.pfb>
+Output written on documento.pdf (12 pages, 608765 bytes).
+PDF statistics:
+ 209 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
+

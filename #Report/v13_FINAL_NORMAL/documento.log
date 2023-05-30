@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  30 MAY 2023 11:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  30 MAY 2023 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -682,6 +682,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ]
 Cap\'{\i }tulo 1.
 
+Overfull \hbox (18.88336pt too wide) in paragraph at lines 108--114
+\T1/cmr/m/n/10 (\T1/cmr/m/it/10 LSD\T1/cmr/m/n/10 , có-digo 40333) da \T1/cmr/b
+x/n/10 L\T1/cmr/m/n/10 icenciatura em \T1/cmr/bx/n/10 E\T1/cmr/m/n/10 ngenharia
+ de \T1/cmr/bx/n/10 C\T1/cmr/m/n/10 omputadores e \T1/cmr/bx/n/10 I\T1/cmr/m/n/
+10 nformática
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 108--114
 
  []
@@ -856,7 +864,7 @@ rm1000.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
 ve/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2023/te
 xmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb><c:/texlive/2023/texmf-dist/f
 onts/type1/public/cm-super/sfti1000.pfb>
-Output written on documento.pdf (12 pages, 611195 bytes).
+Output written on documento.pdf (12 pages, 611205 bytes).
 PDF statistics:
  209 PDF objects out of 1000 (max. 8388607)
  148 compressed objects within 2 object streams

@@ -1,0 +1,25 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/BreadMakerTop.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/Debouncer.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/FlipFlopD.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/ControlSystemUnit_v2.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/PulseGenN.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/TimerN.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/TimeExtra.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/Counter.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/Mux3_1.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/Mux2_1.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/BreadBakerFSM.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/TimerAuxFSM.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/ROM_KxN_1P_V1.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/ROM_KxN_1P_V2.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/DE2_LCD_DISPLAY.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/BinToBCD.vhd}
+vcom -93 -work work {C:/Users/Olga/Downloads/Fase 3_v2_Final/Logic_Blocks/Bin7SegDecoder.vhd}
+
